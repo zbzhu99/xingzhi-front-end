@@ -1,0 +1,62 @@
+<!--页面背景样式-->
+<view class="content">
+  <!--文件夹下的bg.png文件-->
+  <view class="background"></view>
+  <!--页面其它部分-->
+  <!-- 微信个人信息价值 -->
+  <view class="user">
+    <view class="avatar">
+      <image src="{{userInfoAvatar}}"></image>
+    </view>
+    <view class="user-info">
+      <view class="info-box">
+        <text class="author">张三</text>
+        <text class="school">计算机学院</text>
+        <text class="id">2017141412345</text>
+      </view>
+    </view>
+  </view>
+  <!-- 列表信息 -->
+  <view class="my">
+    <view class="my-item" >
+      <view class="myitem-icon">
+        <image src="../../icon/info.png"></image>
+      </view>
+      <view class="myitem-name" catchtap="jumptoMyInfo">
+        <text>我的信息</text>
+      </view>
+    </view>
+    <view class="my-item" catchtap="jumptoRelease">
+      <view class="myitem-icon">
+        <image src="../../icon/release.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>已发布活动</text>
+      </view>
+    </view>
+    <view class="my-item" >
+      <view class="myitem-icon">
+        <image src="../../icon/attend.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>已参加活动</text>
+      </view>
+    </view>
+    <view class="my-item" >
+      <view class="myitem-icon">
+        <image src="../../icon/advice.png"></image>
+      </view>
+      <view class="myitem-name" catchtap="jumptoAdvice">
+        <text>意见反馈</text>
+      </view>
+    </view>
+    <view class="my-item" >
+      <view class="myitem-icon">
+        <image src="../../icon/team.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>关于我们</text>
+      </view>
+    </view>
+  </view>
+</view>

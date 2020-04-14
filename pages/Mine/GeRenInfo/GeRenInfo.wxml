@@ -1,0 +1,52 @@
+<view>
+  <!--头像和姓名区域-->
+  <view class="head">
+    <view class="name_icon">
+      <image src="{{userInfoAvatar}}" mode="widthFix"></image>
+    </view>
+  </view>
+  <!--其余信息列表-->
+  <view class="wrap">
+    <view class="list">
+      <image src="../../../icon/name.png"></image>
+      <view class="words">
+        <text class="item">姓名:</text>
+        <input class="inputs"  placeholder="{{ GeRenInfo.name }}" value="{{ GeRenInfo.name }}"></input>
+      </view>
+    </view>
+    <view class="list">
+      <image src="../../../icon/phone.png"></image>
+      <view class="words">
+        <text class="item">手机:</text>
+        <input class="inputs" value="{{ GeRenInfo.phone }}" placeholder="{{ GeRenInfo.phone }}"></input>
+      </view>
+    </view>
+    <view class="list">
+      <image src="../../../icon/college.png"></image>
+      <view class="words">
+        <text class="item">学院:</text>
+        <input class="inputs" value="{{ GeRenInfo.college }}" placeholder="{{ GeRenInfo.college }}"></input>
+      </view>
+    </view>
+    <view class="list">
+      <image src="../../../icon/number.png"></image>
+      <view class="words">
+        <text class="item">学号:</text>
+        <input class="inputs" value="{{ GeRenInfo.number }}" placeholder="{{ GeRenInfo.number }}">{{ GeRenInfo.number }}</input>
+      </view>
+    </view>
+    <view class="list">
+      <image src="../../../icon/email.png"></image>
+      <view class="words">
+        <text class="item">邮箱:</text>
+        <input class="inputs" value="{{ GeRenInfo.email }}" placeholder="{{ GeRenInfo.email }}"></input>
+      </view>
+    </view>
+  </view>
+  <!--修改按钮-->
+  <view class="save_style">
+    <navigator class="save" hover-class="none" url="" open-type="navigateBack">保存</navigator>
+  </view>
+
+
+</view>

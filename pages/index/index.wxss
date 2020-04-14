@@ -1,21 +1,132 @@
-/**index.wxss**/
-.userinfo {
+/*搜索框and发布活动*/
+/* Page {
+  padding: 0 10rpx 0 10rpx;
+} */
+.top {
+  width: 100%;
+  height: 80rpx;
+  margin-top: 20rpx;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+.search_icon {
+  width: 80%;
+  display: flex;
+}
+.search_icon image {
+  margin-left: 2%;
+  width: 9%;
+}
+.search {
+  width: 80%;
+  height: 60rpx;
+  margin-left: 20rpx;
+  padding-left: 40rpx;
+  border: 1rpx solid #eeeeee;
+  background-color: #eeeeee;
+  border-radius: 15rpx !important;
+  font-size: 30rpx;
+}
+.launch {
+  width: 15%;
+  height: 60rpx;
+  margin-left: 20rpx;
+  border-radius: 15rpx !important;
+  background-color: #f9d257;
+}
+.launch text {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #555555;
+  font-weight: 100rpx;
+  line-height: 32rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+/*轮播图*/
+.slides {
+  width: 100%;
+  margin-top: 12rpx;
+}
+.swiper {
+  height: 300rpx;
+}
+.slides image {
+  width: 100%;
+  height: 100%;
+}
+
+/*活动列表及详情*/
+.Acti_List {
+  margin-right: 15rpx;
+  margin-left: 15rpx;
+}
+.Acti {
+  width: 205rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+  margin-bottom: 15rpx;
+}
+.Acti text {
+  letter-spacing: 5rpx;
+  font-size: 33rpx;
+}
+.Acti image {
+  width: 18%;
+  margin-top: 10rpx;
+}
+.Acti_item {
+  height: 215rpx;
+  border: #c4c4c4 solid;
+  border-width: 1rpx;
+  margin-bottom: 20rpx;
+  border-radius: 15rpx !important;
+}
+.Acti_Detail {
+  display: flex;
+  justify-content: space-between;
+}
+.Acti_Title {
+  display: flex;
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+}
+.circle {
+  width: 30rpx;
+  height: 30rpx;
   border-radius: 50%;
+  background-color: #f9d257;
+  margin-right: 10rpx;
+  margin-top: 7rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.Acti_Content {
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  color: #666666;
+  letter-spacing: 5rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.status_loca {
+  width: 92rpx;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+}
+.status1 {
+  background-color: #15b897;
+  color: white;
+  border-radius: 7rpx;
+}
+.status2 {
+  background-color: #f9d257;
+  color: white;
+  border-radius: 7rpx;
+}
+.status3 {
+  background-color: #666666;
+  color: white;
+  border-radius: 7rpx;
 }

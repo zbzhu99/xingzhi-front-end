@@ -1,0 +1,12 @@
+<view class="advice">
+  <view class="words">意见反馈</view>
+  <view>
+    <textarea maxlength="-1" class="inputs" />
+  </view>
+  <view class="sub">
+    <navigator class="submit" url="" open-type="">提交反馈</navigator>
+  </view>
+  <view>
+    <image class="thanks" mode="widthFix" src="../../../icon/thanks.png"></image>
+  </view>
+</view>

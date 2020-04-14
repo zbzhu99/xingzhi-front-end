@@ -1,0 +1,68 @@
+/* pages/Mine/Mine.wxss */
+page{
+height:100%;
+}
+.background {
+width: 0;
+height: 0;
+border-left: 375rpx solid transparent;
+border-right: 375rpx solid transparent;
+border-top: 200rpx solid #f9d257;
+z-index: -1;
+}
+.avatar{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.avatar image{
+  position: absolute;
+  top: 70rpx;
+  right: 39.5%;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+}
+.info-box{
+  text-align: center;
+  margin-top: 30px;
+}
+.info-box text{
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+}
+
+.my{
+  margin: 15rpx 0 0 0;
+  border-top: solid 8px #ebebeb;
+  border-bottom: solid 2px #ebebeb;
+}
+.my .my-item{
+  width: 750rpx;
+  background: #ffffff;
+  padding: 0;
+  display: flex;
+}
+.my .my-item .myitem-icon{
+  flex: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+.my .my-item .myitem-icon image{
+  width: 50rpx;
+  height: 50rpx;
+  padding: 37.5rpx 0;
+}
+.my .my-item .myitem-name{
+  flex: 5;
+  text-align: left;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #6d6d6d;
+  line-height: 60rpx;
+  padding: 30rpx 0;
+  border-bottom: solid 1px #ebebeb;
+}
+.my .my-item:last-child .myitem-name{
+  border-bottom: none;
+}

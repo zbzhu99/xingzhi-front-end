@@ -1,0 +1,37 @@
+.advice{
+  width:100%;
+  overflow-x:hidden;
+}
+.words {
+  color: gray;
+  font-size: 35rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.inputs {
+  width: 91%;
+  height: 500rpx;
+  border-radius: 15rpx;
+  border: 5rpx solid #f9d257;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  padding-left: 12rpx;
+  padding-top: 12rpx;
+}
+.submit {
+  font-size: 30rpx;
+  background-color: #15b897;
+  color: white;
+  width: 18%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 580rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+}
+.thanks {
+  width: 98%;
+  margin-left: 100rpx;
+  margin-top: 90rpx;
+}

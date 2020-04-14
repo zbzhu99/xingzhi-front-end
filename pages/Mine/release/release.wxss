@@ -1,0 +1,82 @@
+/* pages/Mine/release/release.wxss */
+
+.mod-item {
+  width: 46%;
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+  position: relative;
+}
+
+.mod-img {
+  /* height: 500rpx; */
+  flex-wrap: wrap;
+}
+
+.mod-image {
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+.mod-title {
+  font-size: 32rpx;
+  font-family: '微软雅黑';
+  display: flex;
+  height: 45rpx;
+  margin-top: 15rpx;
+  flex-direction: column;
+  justify-content: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.author-state{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+  align-items: center;
+  justify-content: space-between; /*解决最后一排数量不够自动向两端排列问题*/
+  text-align-last: justify;
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.author-img {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 80rpx;
+}
+
+.author-name {
+  font-size: 28rpx;
+  text-indent: 30rpx;
+  font-family: '微软雅黑';
+  color: #6d6d6d;
+}
+
+.mod-status {
+  width: 92rpx;
+  font-size: 30rpx;
+}
+
+.status1 {
+  background-color: #15b897;
+  color: white;
+  border-radius: 7rpx;
+}
+
+.status2 {
+  background-color: #f9d257;
+  color: white;
+  border-radius: 7rpx;
+}
+
+.status3 {
+  background-color: #666;
+  color: white;
+  border-radius: 7rpx;
+}

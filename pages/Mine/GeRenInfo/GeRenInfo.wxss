@@ -1,0 +1,69 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  height: 0;
+  border-left: 375rpx solid transparent;
+  border-right: 375rpx solid transparent;
+  border-top: 150rpx solid #f9d257;
+}
+.head image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 10rpx;
+}
+.name_icon {
+  margin-bottom: 50rpx;
+}
+.name_icon image{
+  border-radius: 80rpx;
+}
+.name {
+  margin-left: 42rpx;
+  color: white;
+}
+.wrap {
+  margin-top: 120rpx;
+}
+.list {
+  border-bottom: 1rpx solid #eeeeee;
+  width: 95%;
+  margin-top: 50rpx;
+  color: #5e5e5e;
+  display: flex;
+}
+.list image {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 20rpx;
+}
+.words {
+  margin-top: 18rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+.inputs {
+  margin-top: -6rpx;
+}
+.item {
+  margin-right: 50rpx;
+  font-weight: bold;
+}
+.save_style {
+  color: white;
+  background-color: #f9d257;
+  width: 120rpx;
+  height: 50rpx;
+  margin-left: 600rpx;
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+  font-size: 32rpx;
+}
+.save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rpx;
+}

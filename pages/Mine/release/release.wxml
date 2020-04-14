@@ -1,0 +1,24 @@
+<view class="appointment">
+  <view class="app-module">
+    <!-- 每一个活动 -->
+    <view class="mod-item" wx:for="{{actList}}">
+      <!-- 活动图片 -->
+      <view class="mod-img">
+        <image src="{{item.image}}" class="mod-image"></image>
+      </view>
+      <view class="mod-title">{{item.title}}</view>
+      <view class="author-state">
+        <view class="author">
+          <image src="{{userInfoAvatar}}" class="author-img"></image>
+          <view class="author-name">张三</view>
+        </view>
+        <!-- 活动状态 -->
+        <view class="mod-status">
+          <view wx:if="{{ item.state == 1 }}" class="status1">招募中</view>
+          <view wx:if="{{ item.state == 2 }}" class="status2">待抽签</view>
+          <view wx:if="{{ item.state == 3 }}" class="status3">已抽签</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

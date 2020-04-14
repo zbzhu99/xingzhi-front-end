@@ -1,49 +1,53 @@
-// pages/index/index.js
+// pages/GeRenInfo/GeRenInfo.js
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList: [],
-    actiList: [],
-    actiStatus: 0,
+    GeRenInfo: [],
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    userInfoAvatar: '',
   },
-  /**获取轮播图图片数据 */
-  getSwiperList() {
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  getGeRenInfo() {
     let that = this
-    var jsonData = require('../../data/swiper_image.js')
+    var jsonData = require('../../../data/geren_info.js')
     that.setData({
-      swiperList: jsonData.swiperList,
+      GeRenInfo: jsonData.gerenInfoList,
     })
   },
-  /**获取活动信息 */
-  getActiList() {
-    let that = this
-    wx.request({
-      url: 'https://scuxingzhi.top:8080/activity/info',
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+  onLoad: function (options) {
+    var that=this;
+    wx.getUserInfo({
       success: function (res) {
         // success
         that.setData({
-          actiList: res.data,
+          nickName: res.userInfo.nickName,
+          userInfoAvatar: res.userInfo.avatarUrl,
         })
       },
       fail: function () {
         // fail
+        console.log("获取失败！")
       },
       complete: function () {
         // complete
+        console.log("获取用户信息完成！")
+      }
+    })
+    this.getGeRenInfo()
+    wx.getUserInfo({
+      success: (res) => {
+        console.log(res) //获取的用户信息还有很多，都在res中，看打印结果
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true,
+        })
       },
     })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.getSwiperList()
-    this.getActiList()
   },
 
   /**
