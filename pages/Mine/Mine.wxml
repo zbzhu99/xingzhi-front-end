@@ -1,0 +1,4 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">我的</view>
+</cu-custom>
+<view></view>

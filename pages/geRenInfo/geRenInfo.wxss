@@ -1,0 +1,167 @@
+page {
+  background-color: white;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300rpx;
+  background: linear-gradient(to right, #0081ff, #1cbbb4);
+}
+.head image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 35rpx;
+}
+.name_icon {
+  margin-bottom: 50rpx;
+}
+.name_icon image {
+  border-radius: 80rpx;
+}
+.name {
+  margin-left: 42rpx;
+  color: white;
+}
+.wrap {
+  margin-top: 70rpx;
+}
+.list {
+  border-bottom: 1rpx solid #eeeeee;
+  width: 95%;
+  margin-top: 50rpx;
+  color: #5e5e5e;
+  display: flex;
+}
+.list image {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 20rpx;
+}
+.words {
+  margin-top: 18rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+.inputs {
+  margin-top: -6rpx;
+}
+.item {
+  margin-right: 50rpx;
+  font-weight: bold;
+}
+.acti-btn {
+  color: white;
+  position: relative;
+  border: 0rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 64rpx;
+  width: 80%;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  overflow: visible;
+  transform: translate(0rpx, 0rpx);
+  margin-left: 10%;
+  margin-top: 85rpx;
+  margin-right: initial;
+}
+.acti-btn::after {
+  display: none;
+}
+
+.acti-btn:not([class*='bg-']) {
+  background-color: #f0f0f0;
+}
+
+.acti-btn[class*='line'] {
+  background-color: transparent;
+}
+
+.acti-btn[class*='line']::after {
+  content: ' ';
+  display: block;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1rpx solid currentColor;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.acti-btn.round[class*='line']::after {
+  border-radius: 1000rpx;
+}
+
+.acti-btn[class*='lines']::after {
+  border: 6rpx solid currentColor;
+}
+
+.acti-btn[class*='bg-']::after {
+  display: none;
+}
+
+.acti-btn.sm {
+  padding: 0 20rpx;
+  font-size: 20rpx;
+  height: 48rpx;
+}
+
+.acti-btn.lg {
+  padding: 0 40rpx;
+  font-size: 32rpx;
+  height: 80rpx;
+}
+
+.acti-btn.icon.sm {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.acti-btn.icon {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 500rpx;
+  padding: 0;
+}
+
+button.icon.lg {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.acti-btn.shadow-blur::before {
+  top: 4rpx;
+  left: 4rpx;
+  filter: blur(6rpx);
+  opacity: 0.6;
+}
+
+.acti-btn.button-hover {
+  transform: translate(1rpx, 1rpx);
+}
+
+.block {
+  display: block;
+}
+
+.acti-btn.block {
+  display: flex;
+}
+
+.acti-btn[disabled] {
+  opacity: 0.6;
+  color: var(--white);
+}

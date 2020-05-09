@@ -1,0 +1,51 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">我的信息</view>
+</cu-custom>
+<view class="head">
+  <view class="name_icon">
+    <image src="{{ userInfoAvatar }}" mode="widthFix"></image>
+  </view>
+</view>
+<!--其余信息列表-->
+<form class="wrap" bindsubmit="saveMyInfo">
+  <view class="list">
+    <image src="../../icon/name.png"></image>
+    <view class="words">
+      <text class="item">姓名:</text>
+      <input name="name" class="inputs"  placeholder="{{ GeRenInfo.name }}" value="{{ GeRenInfo.name }}"></input>
+    </view>
+  </view>
+  <view class="list">
+    <image src="../../icon/phone.png"></image>
+    <view class="words">
+      <text class="item">手机:</text>
+      <input name="phone" class="inputs" value="{{ GeRenInfo.phone }}" placeholder="{{ GeRenInfo.phone }}"></input>
+    </view>
+  </view>
+  <view class="list">
+    <image src="../../icon/college.png"></image>
+    <view class="words">
+      <text class="item">学院:</text>
+      <input name="college" class="inputs" value="{{ GeRenInfo.college }}" placeholder="{{ GeRenInfo.college }}"></input>
+    </view>
+  </view>
+  <view class="list">
+    <image src="../../icon/number.png"></image>
+    <view class="words">
+      <text class="item">学号:</text>
+      <input name="ID" class="inputs" value="{{ GeRenInfo.number }}" placeholder="{{ GeRenInfo.number }}">{{ GeRenInfo.number }}</input>
+    </view>
+  </view>
+  <view class="list">
+    <image src="../../icon/email.png"></image>
+    <view class="words">
+      <text class="item">邮箱:</text>
+      <input name="email" class="inputs" value="{{ GeRenInfo.email }}" placeholder="{{ GeRenInfo.email }}"></input>
+    </view>
+  </view>
+  <view class="action">
+    <button formType="submit" class="acti-btn bg-gradual-blue shadow-blur round">
+      保存
+    </button>
+  </view>
+</form>

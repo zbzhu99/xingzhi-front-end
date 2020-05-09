@@ -1,0 +1,83 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">行知</view>
+</cu-custom>
+<view>
+  <!--顶部：搜索框 & 发布活动按钮-->
+  <view class="top">
+    <!--搜索框-->
+    <view class="search_icon">
+      <input class="search" placeholder="搜索活动名称" />
+      <image src="../../icon/search_icon.png" mode="widthFix"></image>
+    </view>
+    <view class="action">
+      <button class="acti-btn bg-cyan shadow-blur round">
+        发布活动
+      </button>
+    </view>
+  </view>
+  <!--轮播图-->
+  <view>
+    <swiper
+      class="screen-swiper square-dot"
+      indicator-dots="true"
+      circular="true"
+      autoplay="true"
+      interval="5000"
+      duration="500"
+    >
+      <swiper-item wx:for="{{ swiperList }}" wx:key>
+        <image src="{{ item.imgSrc }}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--活动列表这四个字-->
+  <view class="Acti">
+    <image src="../../icon/list_icon.png" mode="widthFix"></image>
+    <text>活动列表</text>
+  </view>
+  <!--活动详情-->
+  <view wx:for="{{ actiList }}">
+    <!--每一个活动-->
+    <view class="Acti_item bg-{{ item.pk }} shadow-blur">
+      <view class="Acti_Detail">
+        <!--活动标题-->
+        <view class="Acti_Title">
+          <!--黄色圆圈-->
+          <view class="circle"></view>
+          <!--活动名称-->
+          <view>活动名称：{{ item.fields.description }}</view>
+        </view>
+        <!--活动状态-->
+        <view class="status_loca">
+          <view
+            wx:if="{{ item.fields.status == 1 }}"
+            class="status1 shadow-blur"
+            >招募中</view
+          >
+          <view
+            wx:if="{{ item.fields.status == 2 }}"
+            class="status2 shadow-blur"
+            >待抽签</view
+          >
+          <view
+            wx:if="{{ item.fields.status == 3 }}"
+            class="status3 shadow-blur"
+            >已抽签</view
+          >
+        </view>
+      </view>
+
+      <!--活动细节-->
+      <!--备注：时间不具体到小时吗？-->
+      <view class="Acti_Content">
+        <view>活动类型：{{ item.fields.type }}</view>
+        <view>活动时间：{{ item.fields.event_date }}\n</view>
+        <view
+          >报名时间：{{ item.fields.start_date }} —
+          {{ item.fields.end_date }}\n</view
+        >
+        <view>招募人数：{{ item.fields.recruit_num }}人</view>
+      </view>
+    </view>
+  </view>
+</view>

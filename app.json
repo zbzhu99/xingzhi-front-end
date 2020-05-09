@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/geRenInfo/geRenInfo",
+    "pages/index/index",
+    "pages/Mine/Mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#6699cc",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/index.png",
+        "selectedIconPath": "icon/index_choose.png"
+      },
+      {
+        "pagePath": "pages/geRenInfo/geRenInfo",
+        "text": "我的",
+        "iconPath": "icon/mine.png",
+        "selectedIconPath": "icon/mine__choose.png"
+      }
+    ]
+  }
+}
