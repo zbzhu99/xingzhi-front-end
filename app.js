@@ -10,6 +10,23 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        var code = res.code
+        var that = this
+        if (code) {
+          that.globalData.code = code
+          globalData: {
+            code: code
+          }
+          wx.request({
+            url: 'https://scuxingzhi.top:8080/user/login/',
+            method: 'POST',
+            data: { code: res.code },
+            success: function (res) {
+              that.globalData.openid = res.data.openid
+              console.log(res.data.openid)
+            }
+          })
+        }
       }
     })
     // 获取用户信息

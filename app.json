@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/geRenInfo/geRenInfo",
     "pages/index/index",
+    "pages/geRenInfo/geRenInfo",
     "pages/Mine/Mine"
   ],
   "window": {
