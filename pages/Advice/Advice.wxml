@@ -1,0 +1,17 @@
+<!--pages/Advice/Advice.wxml-->
+<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">意见反馈</view>
+</cu-custom>
+<view class="advice">
+  <view class="words">意见反馈</view>
+  <view>
+    <textarea maxlength="-1" class="inputs" />
+  </view>
+  <view class="submit">
+    <button class="cu-btn round bg-yellow shadow">提交</button>
+  </view>
+  <view>
+    <image class="thanks" mode="widthFix" src="../../icon/thanks.png"></image>
+  </view>
+</view>

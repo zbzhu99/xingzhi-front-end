@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/Mine/Mine",
     "pages/geRenInfo/geRenInfo",
-    "pages/Mine/Mine"
+    "pages/Release/Release",
+    "pages/Advice/Advice"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,7 +30,7 @@
         "selectedIconPath": "icon/index_choose.png"
       },
       {
-        "pagePath": "pages/geRenInfo/geRenInfo",
+        "pagePath": "pages/Mine/Mine",
         "text": "我的",
         "iconPath": "icon/mine.png",
         "selectedIconPath": "icon/mine__choose.png"

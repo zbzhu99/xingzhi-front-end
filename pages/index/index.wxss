@@ -203,10 +203,10 @@ button.icon.lg {
 }
 /**先弄七个颜色，如果活动超出7个..再配色吧*/
 .bg-1 {
-  background-color: #58b2dc;
+  background-color: #C29E80;
 }
 .bg-2 {
-  background-color: #33cccc;
+  background-color: #FEB78D;
 }
 .bg-3 {
   background-color: #9999cc;
@@ -224,11 +224,11 @@ button.icon.lg {
   background-color: #66ffcc;
 }
 .status1 {
-  background-color: #33cc99;
+  background-color: #ACBFEA;
   color: white;
 }
 .status2 {
-  background-color: #f9d257;
+  background-color: #9ADBC5;
   color: white;
 }
 .status3 {

@@ -1,0 +1,4 @@
+/* pages/Release/Release.wxss */
+page{
+  background: #FFFFF0
+}

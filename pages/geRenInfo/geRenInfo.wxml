@@ -1,7 +1,9 @@
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+  <view slot="backText">返回</view>
   <view slot="content">我的信息</view>
 </cu-custom>
-<view class="head">
+
+<view class="head" >
   <view class="name_icon">
     <image src="{{ userInfoAvatar }}" mode="widthFix"></image>
   </view>
@@ -44,7 +46,7 @@
     </view>
   </view>
   <view class="action">
-    <button formType="submit" class="acti-btn bg-gradual-blue shadow-blur round">
+    <button formType="submit" class="acti-btn bg-yellow shadow-blur round">
       保存
     </button>
   </view>

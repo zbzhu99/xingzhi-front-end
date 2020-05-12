@@ -1,4 +1,45 @@
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="bg-yellow">
   <view slot="content">我的</view>
 </cu-custom>
-<view></view>
+<!-- 获取用户信息头像 -->
+<view class="bg-yellow padding radius text-center shadow-blur">
+  <view class="head">
+    <view class="name_icon">
+      <image src="{{ userInfoAvatar }}" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+<!-- 列表 -->
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/geRenInfo/geRenInfo" hover-class="none">
+      <image src="/icon/number.png" class="png" mode="aspectFit"></image>
+      <text class="text-grey">我的信息</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/Release/Release" hover-class="none">
+      <image src="/icon/release.png" class="png" mode="aspectFit"></image>
+      <text class="text-grey">已发布活动</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+      <image src="/icon/phone.png" class="png" mode="aspectFit"></image>
+      <text class="text-grey">已参加活动</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/Advice/Advice" hover-class="none">
+      <image src="/icon/advice.png" class="png" mode="aspectFit"></image>
+      <text class="text-grey">意见反馈</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <button class="cu-btn content" open-type="feedback">
+      <image src="/icon/team.png" class="png" mode="aspectFit"></image>
+      <text class="text-grey">关于我们</text>
+    </button>
+  </view>
+  
+</view>
