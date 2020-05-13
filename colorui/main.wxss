@@ -2425,13 +2425,13 @@ button.icon.lg {
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .cu-form-group picker::after {
   font-family: 'cuIcon';
   display: block;
-  content: '\e6a3';
+  /* content: '\e6a3'; */
   position: absolute;
   font-size: 34rpx;
   color: var(--grey);

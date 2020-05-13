@@ -1,0 +1,32 @@
+/* pages/newAct/newAct.wxss */
+page{
+  background: white
+}
+/* 按钮 */
+.cu-btn{
+  margin-left: 15px;
+  width: 65px;
+}
+.padding{
+  padding-left: 20rpx;
+}
+.padding-sm{
+  padding: 30rpx;
+  font-size: 20px;
+  width: 500px;
+  font-weight: bolder;
+}
+.title{
+  font-weight: bold;
+  color: #666666
+}
+.picker{
+  color: #8a8585;
+}
+.action{
+  font-weight: bold;
+  color: #666666
+}
+.solids{
+  margin-left: 20px
+}

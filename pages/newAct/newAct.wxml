@@ -1,0 +1,90 @@
+<!--pages/newAct/newAct.wxml-->
+<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">新建活动发布</view>
+</cu-custom>
+<view class="flex  padding justify-between">
+  <view class=" padding-sm  ">新建活动发布</view>
+  <view class="flex  padding justify-end">
+    <button class="cu-btn bg-gray">取消</button>
+    <button class="cu-btn bg-green">发布</button>
+  </view>
+</view>
+
+<form>
+  <view class="cu-form-group ">
+    <view class="title">活动名称</view>
+    <input placeholder='输入活动名称'></input>
+  </view>
+  <view class="cu-form-group ">
+    <view class="title">活动时间</view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <input value='{{time}}' placeholder='选择时间' />
+    </picker>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">报名截止日期</view>
+		<picker mode="date" value="{{enddate}}" bindchange="DateChange">
+			<view class="picker">
+				{{enddate}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group ">
+		<view class="title">招募人数</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'选择活动招募人数'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">活动地址</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+    <view class="title">活动负责人</view>
+    <input placeholder="输入负责人姓名"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">负责人联系方式</view>
+    <input placeholder="输入手机号码"></input>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        +86
+      </view>
+      <view class="cu-tag line-blue">
+        中国大陆
+      </view>
+    </view>
+  </view>
+  <view class="cu-form-group ">
+		<view class="title">活动详情</view>
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="简要描述活动内容"></textarea>
+	</view>
+  <view class="cu-form-group">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+  <view >
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+</form>

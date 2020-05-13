@@ -1,9 +1,11 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/Mine/Mine",
     "pages/geRenInfo/geRenInfo",
     "pages/Release/Release",
+    "pages/newAct/newAct",
     "pages/Advice/Advice"
     
   ],

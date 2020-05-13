@@ -50,6 +50,11 @@ Page({
       url: '../logs/logs',
     })
   },
+  goTonewAct:function(){
+    wx.navigateTo({
+      url: "../newAct/newAct",
+    })
+  },
   onLoad: function () {
     this.getActiList()
     this.getSwiperList()

@@ -10,7 +10,7 @@
       <image src="../../icon/search_icon.png" mode="widthFix"></image>
     </view>
     <view class="action">
-      <button class="acti-btn bg-yellow shadow-blur round">
+      <button class="acti-btn bg-yellow shadow-blur round" bindtap="goTonewAct">
         发布活动
       </button>
     </view>
