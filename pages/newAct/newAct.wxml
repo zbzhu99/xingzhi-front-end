@@ -14,7 +14,7 @@
 <form>
   <view class="cu-form-group ">
     <view class="title">活动名称</view>
-    <input placeholder='输入活动名称'></input>
+    <input placeholder='输入活动名称' ></input>
   </view>
   <view class="cu-form-group ">
     <view class="title">活动时间</view>
@@ -24,9 +24,9 @@
   </view>
   <view class="cu-form-group">
 		<view class="title">报名截止日期</view>
-		<picker mode="date" value="{{enddate}}" bindchange="DateChange">
+		<picker mode="date" value="{{date}}" bindchange="DateChange">
 			<view class="picker">
-				{{enddate}}
+				{{date}}
 			</view>
 		</picker>
 	</view>
