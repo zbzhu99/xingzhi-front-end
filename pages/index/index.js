@@ -93,4 +93,9 @@ Page({
       hasUserInfo: true,
     })
   },
+  cardSwiper(e) {
+    this.setData({
+      cardCur: e.detail.current
+    })
+  }
 })
