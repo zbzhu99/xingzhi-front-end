@@ -15,7 +15,7 @@ Page({
     swiperList: [],
     actiList: [],
     actiStatus: 0,
-    current: 0
+    current: 0,
   },
   getSwiperList() {
     /**获取轮播图图片数据 */
@@ -78,9 +78,15 @@ Page({
     })
   },
   goTonewAct:function(){
-    wx.navigateTo({
-      url: "../newAct/newAct",
-    })
+    if (app.globalData.is_filled) {
+      wx.navigateTo({
+        url: "../newAct/newAct",
+      })
+    } else {
+      this.setData({
+        modalName: "Modal"
+      })
+    }
   },
   onLoad: function () {
     this.getActiList()
@@ -124,5 +130,11 @@ Page({
     this.setData({
       cardCur: e.detail.current
     })
-  }
+  },
+
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
 })

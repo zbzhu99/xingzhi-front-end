@@ -1,4 +1,7 @@
 // pages/GeRenInfo/GeRenInfo.js
+//获取应用实例
+const app = getApp()
+
 Page({
   /**
    * 页面的初始数据
@@ -10,6 +13,37 @@ Page({
   },
   /**提交个人信息保存 */
   saveMyInfo: function (e) {
+    var that = this
+    wx.request({
+      // url: 'http://127.0.0.1:8000/user/update/',
+      url: 'https://scuxingzhi.top:8080/user/update/',
+      method: 'POST',
+      data: {
+        open_id: app.globalData.openid,
+        name: e.detail.value.name,
+        phone_num: e.detail.value.phone_num,
+        department: e.detail.value.department,
+        student_id: e.detail.value.student_id,
+        email: e.detail.value.email
+      },
+      success: function (res) {
+        app.globalData.is_filled = res.data.is_filled
+        console.log(res.data.name)
+        wx.setStorage({
+          key: 'userData',
+          data: {
+            name: res.data.name,
+            phone_num: res.data.phone_num,
+            department: res.data.department,
+            student_id: res.data.student_id,
+            email: res.data.email
+          }
+        })
+        that.setData({
+          modalName: "Modal"
+        })
+      }
+    })
     console.log('提交了个人信息', e.detail.value)
   },
   /**
@@ -20,6 +54,15 @@ Page({
     var jsonData = require('../../data/geren_info.js')
     that.setData({
       GeRenInfo: jsonData.gerenInfoList,
+    })
+    wx.getStorage({
+      key: 'userData',
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          GeRenInfo: res.data
+        })
+      }
     })
   },
   onLoad: function (options) {
@@ -50,6 +93,12 @@ Page({
           hasUserInfo: true,
         })
       },
+    })
+  },
+
+  hideModal(e) {
+    this.setData({
+      modalName: null
     })
   },
 

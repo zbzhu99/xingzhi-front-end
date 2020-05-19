@@ -14,35 +14,35 @@
     <image src="../../icon/name.png"></image>
     <view class="words">
       <text class="item">姓名:</text>
-      <input name="name" class="inputs"  placeholder="{{ GeRenInfo.name }}" value="{{ GeRenInfo.name }}"></input>
+      <input name="name" class="inputs" value="{{ GeRenInfo.name }}"></input>
     </view>
   </view>
   <view class="list">
     <image src="../../icon/phone.png"></image>
     <view class="words">
       <text class="item">手机:</text>
-      <input name="phone" class="inputs" value="{{ GeRenInfo.phone }}" placeholder="{{ GeRenInfo.phone }}"></input>
+      <input name="phone_num" class="inputs" value="{{ GeRenInfo.phone_num }}"></input>
     </view>
   </view>
   <view class="list">
     <image src="../../icon/college.png"></image>
     <view class="words">
       <text class="item">学院:</text>
-      <input name="college" class="inputs" value="{{ GeRenInfo.college }}" placeholder="{{ GeRenInfo.college }}"></input>
+      <input name="department" class="inputs" value="{{ GeRenInfo.department }}" placeholder="{{ GeRenInfo.department }}"></input>
     </view>
   </view>
   <view class="list">
     <image src="../../icon/number.png"></image>
     <view class="words">
       <text class="item">学号:</text>
-      <input name="ID" class="inputs" value="{{ GeRenInfo.number }}" placeholder="{{ GeRenInfo.number }}">{{ GeRenInfo.number }}</input>
+      <input name="student_id" class="inputs" value="{{ GeRenInfo.student_id }}"></input>
     </view>
   </view>
   <view class="list">
     <image src="../../icon/email.png"></image>
     <view class="words">
       <text class="item">邮箱:</text>
-      <input name="email" class="inputs" value="{{ GeRenInfo.email }}" placeholder="{{ GeRenInfo.email }}"></input>
+      <input name="email" class="inputs" value="{{ GeRenInfo.email }}"></input>
     </view>
   </view>
   <view class="action">
@@ -51,3 +51,18 @@
     </button>
   </view>
 </form>
+
+<!-- 提示框 -->
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      保存信息成功！
+    </view>
+  </view>
+</view>

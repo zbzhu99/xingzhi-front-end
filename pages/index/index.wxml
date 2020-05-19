@@ -78,3 +78,19 @@
     -->
   </view>
 </view>
+
+
+<!-- 提示框 -->
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      请先完善个人信息！
+    </view>
+  </view>
+</view>

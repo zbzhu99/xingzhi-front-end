@@ -19,11 +19,24 @@ App({
           }
           wx.request({
             url: 'https://scuxingzhi.top:8080/user/login/',
+            // url: 'http://127.0.0.1:8000/user/login/',
             method: 'POST',
             data: { code: res.code },
             success: function (res) {
               that.globalData.openid = res.data.openid
-              console.log(res.data.openid)
+              that.globalData.is_filled = res.data.is_filled
+              console.log(that.globalData.openid)
+              wx.setStorage({
+                key: 'userData',
+                data: {
+                  name: res.data.name,
+                  phone_num: res.data.phone_num,
+                  department: res.data.department,
+                  student_id: res.data.student_id,
+                  email: res.data.email
+                }
+              })
+              console.log(res.data.is_filled)
             }
           })
         }
@@ -64,6 +77,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openid: null,
+    is_filled: 0,
   }
 })

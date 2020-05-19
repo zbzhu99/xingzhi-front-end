@@ -6,7 +6,7 @@
 <view class="flex  padding justify-between">
   <view class=" padding-sm  ">新建活动发布</view>
   <view class="flex  padding justify-end">
-    <button class="cu-btn bg-gray">取消</button>
+    <!-- <button class="cu-btn bg-gray">取消</button> -->
     <button class="cu-btn bg-green">发布</button>
   </view>
 </view>
