@@ -1,4 +1,4 @@
-// pages/Join/Join.js
+// pages/Release/Release.js
 var dataObj = require("../../data/act_list.js");
 Page({
 
@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // actiList: [],
   },
 
   /**
