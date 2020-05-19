@@ -223,6 +223,8 @@ button::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-indent: 60rpx;    /* 首行缩进60rpx */
+		text-align: left;
 }
 .post-phone{
     font-weight: 600;
