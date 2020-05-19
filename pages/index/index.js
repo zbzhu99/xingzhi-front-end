@@ -8,11 +8,14 @@ Page({
     CustomBar: app.globalData.CustomBar,
     motto: 'Hi 开发者！',
     userInfo: {},
+    author: '',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    remind: '加载中',
     swiperList: [],
     actiList: [],
     actiStatus: 0,
+    current: 0
   },
   getSwiperList() {
     /**获取轮播图图片数据 */
@@ -20,6 +23,19 @@ Page({
     var jsonData = require('../../data/swiper_image.js')
     that.setData({
       swiperList: jsonData.swiperList,
+    })
+  },
+  /**获取轮播图当前图片索引 */
+  cardSwiper: function (e) {
+    this.setData({
+      current: e.detail.current
+    })
+  },
+  swiperClick: function (e) {
+    let _this = this;
+    let _index = this.data.current;
+    wx.navigateTo({
+      url: '../news/news?id=' + _index,
     })
   },
   /**获取活动信息 */
@@ -43,6 +59,17 @@ Page({
         // complete
       },
     })
+  },
+  /**
+    * 生命周期函数--监听页面初次渲染完成
+  */
+  onReady: function () {
+    var that = this;
+    setTimeout(function () {
+      that.setData({
+        remind: ''
+      });
+    }, 1000);
   },
   //事件处理函数
   bindViewTap: function () {

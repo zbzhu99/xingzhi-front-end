@@ -1,72 +1,80 @@
 <cu-custom bgColor="bg-yellow">
   <view slot="content">行知</view>
 </cu-custom>
-<view>
-  <!--顶部：搜索框 & 发布活动按钮-->
-  <view class="top">
-    <!--搜索框-->
-    <view class="search_icon">
-      <input class="search" placeholder="搜索活动名称" />
-      <image src="../../icon/search_icon.png" mode="widthFix"></image>
+<!--加载loading-->
+<view class="remind-box" wx:if="{{remind}}">
+  <image class="remind-img" src="https://www.gatesma.cn/myfile/img/loading.gif"></image>
+</view>
+<block wx:else>
+  <view class='load_content'>
+    <!--顶部：搜索框 & 发布活动按钮-->
+    <view class="top">
+      <!--搜索框-->
+      <view class="search_icon">
+        <input class="search" placeholder="搜索活动名称" />
+        <image src="../../icon/search_icon.png" mode="widthFix"></image>
+      </view>
+      <view class="action">
+        <button class="acti-btn bg-yellow shadow-blur round" bindtap="goTonewAct">
+          发布活动
+        </button>
+      </view>
     </view>
-    <view class="action">
-      <button class="acti-btn bg-yellow shadow-blur round" bindtap="goTonewAct">
-        发布活动
-      </button>
+    <!--轮播图-->
+
+    <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#f1f1f1" indicator-active-color="#aaaaaa">
+      <swiper-item bindtap='swiperClick' wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+        <view class="swiper-item">
+          <image src="{{item.imgSrc}}" mode="aspectFill"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+    <!--活动列表这四个字-->
+    <view class="Acti">
+      <image src="../../icon/list_icon.png" mode="widthFix"></image>
+      <text>活动列表</text>
+    </view>
+    <!--活动详情-->
+    <view>
+      <!--每一个活动-->
+      <navigator url="../acti/acti_detail/acti_detail?id={{ item.id }}" class="Acti_item bg-{{ item.id }} shadow-blur" wx:for="{{ actiList }}">
+        <view class="Acti_Detail">
+          <!--活动标题-->
+          <view class="Acti_Title">
+            <!--黄色圆圈-->
+            <view class="circle"></view>
+            <!--活动名称-->
+            <view>活动名称：{{ item.name }}</view>
+          </view>
+          <!--活动状态-->
+          <view class="status_loca">
+            <view wx:if="{{ item.status == 1 }}" class="status1 shadow-blur">招募中</view>
+            <view wx:if="{{ item.status == 2 }}" class="status2 shadow-blur">待抽签</view>
+            <view wx:if="{{ item.status == 3 }}" class="status3 shadow-blur">已抽签</view>
+          </view>
+        </view>
+
+        <!--活动细节-->
+        <!--备注：时间不具体到小时吗？-->
+        <view class="Acti_Content">
+          <view>活动类型：{{ item.type }}</view>
+          <view>活动时间：{{ item.event_date }}\n</view>
+          <view>报名时间：{{ item.start_date }} — {{ item.end_date }}\n</view>
+          <view>招募人数：{{ item.recruit_num }}人</view>
+        </view>
+      </navigator>
     </view>
   </view>
-  <!--轮播图-->
+</block>
 
-  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#f1f1f1" indicator-active-color="#aaaaaa">
-  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
-    <view class="swiper-item">
-      <image src="{{item.imgSrc}}" mode="aspectFill" ></image>
-    </view>
-  </swiper-item>
-</swiper>
-  <!--活动列表这四个字-->
-  <view class="Acti">
-    <image src="../../icon/list_icon.png" mode="widthFix"></image>
-    <text>活动列表</text>
-  </view>
-  <!--活动详情-->
-  <view>
-    <!--每一个活动-->
-    <navigator
-      url="../acti/acti_detail/acti_detail?id={{ item.id }}"
-      class="Acti_item bg-{{ item.id }} shadow-blur"
-      wx:for="{{ actiList }}"
-    >
-      <view class="Acti_Detail">
-        <!--活动标题-->
-        <view class="Acti_Title">
-          <!--黄色圆圈-->
-          <view class="circle"></view>
-          <!--活动名称-->
-          <view>活动名称：{{ item.name }}</view>
-        </view>
-        <!--活动状态-->
-        <view class="status_loca">
-          <view wx:if="{{ item.status == 1 }}" class="status1 shadow-blur"
-            >招募中</view
-          >
-          <view wx:if="{{ item.status == 2 }}" class="status2 shadow-blur"
-            >待抽签</view
-          >
-          <view wx:if="{{ item.status == 3 }}" class="status3 shadow-blur"
-            >已抽签</view
-          >
-        </view>
-      </view>
-
-      <!--活动细节-->
-      <!--备注：时间不具体到小时吗？-->
-      <view class="Acti_Content">
-        <view>活动类型：{{ item.type }}</view>
-        <view>活动时间：{{ item.event_date }}\n</view>
-        <view>报名时间：{{ item.start_date }} — {{ item.end_date }}\n</view>
-        <view>招募人数：{{ item.recruit_num }}人</view>
-      </view>
-    </navigator>
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <!--
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    -->
   </view>
 </view>

@@ -1,0 +1,14 @@
+<!--pages/About/About.wxml-->
+<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">关于我们</view>
+</cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于行知小程序</view>
+  <view class='text-content'>
+    <view>Hi！行知成员~欢迎使用行知小程序！</view>
+    <view class='margin-top-sm'>该小程序旨在帮助四川大学行知协会活动的开展与协会新闻的宣传。小程序会定期更新协会的志愿活动发布、抽签和活动安排。</view>
+    <view class='margin-top-sm'>对于该小程序的改进与完善欢迎同学与开发者联系。</view>
+    <view class='margin-top-sm'>联系方式：540254441（QQ）</view>
+  </view>
+</view>

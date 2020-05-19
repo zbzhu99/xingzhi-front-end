@@ -1,6 +1,49 @@
 page {
   background-color: white;
 }
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.remind-img {
+  width: 250rpx;
+  height: 250rpx;
+  padding-bottom: 25rpx;
+  margin-top: 350rpx;
+}
+.remind-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 300rpx;
+}
+.load_content{
+  transform: translate3d(0,100%,0);
+  animation: rise 2s cubic-bezier(0.19, 1, 0.22, 1) .25s forwards;
+}
+@keyframes rise{
+  0% {opacity: 0;transform: translate3d(0,100%,0);}
+  50% {opacity: 1;}
+  100% {opacity: 1;transform: translate3d(0,0rpx,0);}
+}
 .top {
   width: 100%;
   height: 80rpx;

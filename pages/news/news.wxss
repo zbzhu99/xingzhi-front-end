@@ -1,0 +1,66 @@
+page{
+  background: white
+}
+.post-author{
+    float:left;
+    font-size: 30rpx;
+    margin-left: 100rpx;
+}
+.post-author-name{
+    font-size: 30rpx;
+    margin-left: 10rpx;
+}
+.post-date {
+    margin-left: 120rpx;
+    font-size: 30rpx;
+    
+}
+.post-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 50rpx;
+    margin-left: 20px;
+    letter-spacing: 5rpx;
+}
+.title {
+    font-weight: 600;
+    color: #333;
+    margin-left: 30rpx;
+}
+
+.post-content {
+    font-size: 28rpx;
+    margin-top: 200rpx;
+    margin-left: 20rpx;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+    word-break:break-all;
+    
+}
+.post-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+    background-color: #fff;
+    /* border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed; */
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.ime{
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  height: 400rpx;
+  display: flex;
+}
+.action{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.newstitle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}

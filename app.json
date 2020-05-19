@@ -6,7 +6,9 @@
     "pages/geRenInfo/geRenInfo",
     "pages/Release/Release",
     "pages/newAct/newAct",
-    "pages/Advice/Advice"
+    "pages/Advice/Advice",
+    "pages/About/About",
+    "pages/Join/Join"
     
   ],
   "window": {
@@ -22,20 +24,20 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#515151",
-    "selectedColor": "#6699cc",
+    "selectedColor": "#f37b1d",
     "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "icon/index.png",
-        "selectedIconPath": "icon/index_choose.png"
+        "iconPath": "icon/moon.png",
+        "selectedIconPath": "icon/sun.png"
       },
       {
         "pagePath": "pages/Mine/Mine",
         "text": "我的",
-        "iconPath": "icon/mine.png",
-        "selectedIconPath": "icon/mine__choose.png"
+        "iconPath": "icon/bear.png",
+        "selectedIconPath": "icon/rabbit.png"
       }
     ]
   }

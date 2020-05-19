@@ -24,7 +24,7 @@
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+    <navigator class="content" url="/pages/Join/Join" hover-class="none">
       <image src="/icon/phone.png" class="png" mode="aspectFit"></image>
       <text class="text-grey">已参加活动</text>
     </navigator>
@@ -36,10 +36,10 @@
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <button class="cu-btn content" open-type="feedback">
+    <navigator class="content" url="/pages/About/About" hover-class="none">
       <image src="/icon/team.png" class="png" mode="aspectFit"></image>
       <text class="text-grey">关于我们</text>
-    </button>
+    </navigator>
   </view>
   
 </view>

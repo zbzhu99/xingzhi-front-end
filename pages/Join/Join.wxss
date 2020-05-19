@@ -1,0 +1,40 @@
+/* pages/Join/Join.wxss */
+
+@import"/colorui/main.wxss";
+
+page {
+  background-color: white;
+  width: 100%;
+  position: fixed; 
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200rpx;
+  background: bg-yellow;
+}
+.head image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 35rpx;
+}
+.name_icon {
+  margin-bottom: 50rpx;
+}
+.name_icon image {
+  border-radius: 80rpx;
+}
+.name {
+  margin-left: 42rpx;
+  color: white;
+}
+
+
+/* 列表样式 */
+.cu-list.menu > .cu-item {
+  background-color: var(--ghostWhite);
+}
+.text-grey{
+  color: var(--darkGray);
+}
