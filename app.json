@@ -8,7 +8,9 @@
     "pages/newAct/newAct",
     "pages/Advice/Advice",
     "pages/About/About",
-    "pages/Join/Join"
+    "pages/Join/Join",
+    "pages/acti/acti",
+    "pages/acti/acti_detail/acti_detail"
     
   ],
   "window": {
