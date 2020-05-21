@@ -8,15 +8,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    time: '',
-    dateTimeArray: '',
-    dateTime: '',
+    // time: '',
+    // dateTimeArray: '',
+    // dateTime: '',
     startYear: 2020,
     endYear: 2050,
     picker: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     region: ['四川省', '成都市', '双流区'],
     date: '',
+    actdate:'',
     minDate: '',
+    actminDate: '',
     imgList: [],
     picker2: ['普通活动', '特殊活动'],
   },
@@ -34,12 +36,16 @@ Page({
       date: e.detail.value
     })
   },
-
-  DateTimeChange(e) {
+  ActDateChange(e){
     this.setData({
-      dateTime: e.detail.value
+      actdate: e.detail.value
     })
   },
+  // DateTimeChange(e) {
+  //   this.setData({
+  //     dateTime: e.detail.value
+  //   })
+  // },
   // 地址选择器
   RegionChange: function (e) {
     this.setData({
@@ -99,24 +105,26 @@ Page({
    */
   onLoad: function (options) {
     var DATE = util.formatDate(new Date());
-    var TIME = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear, util.formatDate2(new Date()))
-    var lastArray = TIME.dateTimeArray;
-    var lastTime = TIME.dateTime;
+  //   var TIME = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear, util.formatDate2(new Date()))
+  //   var lastArray = TIME.dateTimeArray;
+  //   var lastTime = TIME.dateTime;
     this.setData({
       date: DATE,
       minDate: DATE,
-      dateTime: TIME.dateTime,
-      dateTimeArray: TIME.dateTimeArray
+      actdate: DATE,
+      actminDate: DATE,
+      // dateTime: TIME.dateTime,
+      // dateTimeArray: TIME.dateTimeArray
     })
-  },
-  changeDateTimeColumn(e) {
-    var arr = this.data.dateTime, dateArr = this.data.dateTimeArray;
-    arr[e.detail.column] = e.detail.value;
-    dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
-    this.setData({
-      dateTimeArray: dateArr,
-      dateTime: arr
-    });
+  // },
+  // changeDateTimeColumn(e) {
+  //   var arr = this.data.dateTime, dateArr = this.data.dateTimeArray;
+  //   arr[e.detail.column] = e.detail.value;
+  //   dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+  //   this.setData({
+  //     dateTimeArray: dateArr,
+  //     dateTime: arr
+  //   });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
