@@ -51,6 +51,7 @@ Page({
         that.setData({
           actiList: res.data,
         })
+        console.log(actiList)
       },
       fail: function () {
         // fail

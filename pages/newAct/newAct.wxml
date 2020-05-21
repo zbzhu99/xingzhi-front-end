@@ -38,43 +38,27 @@
 			</view>
 		</picker>
 	</view>
-  <view class="cu-form-group">
+  <!-- <view class="cu-form-group">
 		<view class="title">活动地址</view>
 		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
 			<view class="picker">
 				{{region[0]}}，{{region[1]}}，{{region[2]}}
 			</view>
 		</picker>
-	</view>
-  <view class="cu-form-group">
-    <view class="title">活动负责人</view>
-    <input placeholder="输入负责人姓名"></input>
-  </view>
-  <view class="cu-form-group">
-    <view class="title">负责人联系方式</view>
-    <input placeholder="输入手机号码"></input>
-    <view class="cu-capsule radius">
-      <view class="cu-tag bg-blue">
-        +86
-      </view>
-      <view class="cu-tag line-blue">
-        中国大陆
-      </view>
-    </view>
-  </view>
+	</view> -->
   <view class="cu-form-group ">
-		<view class="title">活动详情</view>
-		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="简要描述活动内容"></textarea>
+		<view class="title">活动简介</view>
+		<textarea maxlength="-1" bindinput="textareaBInput" placeholder="简要描述活动内容"></textarea>
 	</view>
-  <view class="cu-form-group">
+  <!-- <view class="cu-form-group">
 		<view class="action">
 			图片上传
 		</view>
 		<view class="action">
 			{{imgList.length}}/4
 		</view>
-	</view>
-  <view >
+	</view> -->
+  <!-- <view >
 		<view class="grid col-4 grid-square flex-sub">
 			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
 				<image src='{{imgList[index]}}' mode='aspectFill'></image>
@@ -86,5 +70,5 @@
 				<text class="cuIcon-cameraadd"></text>
 			</view>
 		</view>
-	</view>
+	</view> -->
 </form>
