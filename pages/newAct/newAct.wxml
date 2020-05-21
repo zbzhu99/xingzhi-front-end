@@ -26,13 +26,16 @@
   </view>
   <view class="cu-form-group ">
     <view class="title">活动时间</view>
-    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-      <input value='{{time}}' placeholder='选择时间' />
-    </picker>
+     <!--> <input value='{{time}}' placeholder='选择时间' /> -->
+    <picker mode="multiSelector" value="{{dateTime}}" bindchange="DateTimeChange" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+    <view class="picker">
+      {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}
+    </view>
+        </picker>
   </view>
   <view class="cu-form-group">
 		<view class="title">报名截止日期</view>
-		<picker mode="date" value="{{date}}" bindchange="DateChange">
+		<picker mode="date" value="{{date}}" start="{{minDate}}" bindchange="DateChange">
 			<view class="picker">
 				{{date}}
 			</view>
