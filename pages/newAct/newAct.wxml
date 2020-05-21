@@ -17,6 +17,14 @@
     <input placeholder='输入活动名称' ></input>
   </view>
   <view class="cu-form-group ">
+    <view class="title">活动类型</view>
+    <picker bindchange="PickerChangeAct" value="{{index2}}" range="{{picker2}}">
+			<view class="picker">
+				{{index2?picker2[index2]:'请选择活动类型'}}
+			</view>
+		</picker>
+  </view>
+  <view class="cu-form-group ">
     <view class="title">活动时间</view>
     <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
       <input value='{{time}}' placeholder='选择时间' />
@@ -48,7 +56,7 @@
 	</view> -->
   <view class="cu-form-group ">
 		<view class="title">活动简介</view>
-		<textarea maxlength="-1" bindinput="textareaBInput" placeholder="简要描述活动内容"></textarea>
+		<textarea  maxlength="-1" bindinput="textareaBInput" placeholder="简要描述活动内容"></textarea>
 	</view>
   <!-- <view class="cu-form-group">
 		<view class="action">

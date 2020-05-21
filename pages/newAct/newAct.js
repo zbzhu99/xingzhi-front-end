@@ -53,12 +53,20 @@ Page({
     region: ['四川省', '成都市', '双流区'],
     date: '2020-01-01',
     imgList: [],
+    picker2: ['普通活动', '特殊活动'],
   },
   // 活动时间选择器
   PickerChange(e) {
     console.log(e);
     this.setData({
       index: e.detail.value
+    })
+  },
+  //活动类型选择
+  PickerChangeAct(e){
+    console.log(e);
+    this.setData({
+      index2: e.detail.value
     })
   },
   // 截至日期选择器
