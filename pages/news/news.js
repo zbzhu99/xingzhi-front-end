@@ -6,7 +6,7 @@ Page({
    */
   data: {
     swiperList: [],
-    imgSrc: ''
+    news: ''
   },
   getSwiperList() {
     /**获取轮播图图片数据 */
@@ -20,8 +20,9 @@ Page({
   onLoad: function (options) {
     let that = this;
     that.getSwiperList()
+    var postId=options.id;
     that.setData({
-      imgSrc: that.data.swiperList[options.id],
+      news: that.data.swiperList[postId],
     })
   },
   /**

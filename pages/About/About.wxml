@@ -8,7 +8,9 @@
   <view class='text-content'>
     <view>Hi！行知成员~欢迎使用行知小程序！</view>
     <view class='margin-top-sm'>该小程序旨在帮助四川大学行知协会活动的开展与协会新闻的宣传。小程序会定期更新协会的志愿活动发布、抽签和活动安排。</view>
+    <view class='margin-top-sm'>四川大学行知协会（下称“协会”）成立于2003年，是一个以支援西部基础教育为主要目标的校级公益社团。</view>
+    <view class='margin-top-sm'  style="white-space:pre-wrap">行知协会微信公众号：scuxingzhixiehui \n微博：四川大学行知协会</view>
     <view class='margin-top-sm'>对于该小程序的改进与完善欢迎同学与开发者联系。</view>
-    <view class='margin-top-sm'>联系方式：540254441（QQ）</view>
+    <view class='margin-top-sm'>开发者联系方式：540254441（QQ）</view>
   </view>
 </view>

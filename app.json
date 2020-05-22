@@ -10,7 +10,8 @@
     "pages/About/About",
     "pages/Join/Join",
     "pages/acti/acti",
-    "pages/acti/acti_detail/acti_detail"
+    "pages/acti/acti_detail/acti_detail",
+    "pages/news/news"
     
   ],
   "window": {

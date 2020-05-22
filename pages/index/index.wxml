@@ -23,7 +23,7 @@
     <!--轮播图-->
 
     <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#f1f1f1" indicator-active-color="#aaaaaa">
-      <swiper-item bindtap='swiperClick' wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <swiper-item bindtap='swiperClick' wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}" data-post-id="{{item.id}}">
         <view class="swiper-item">
           <image src="{{item.imgSrc}}" mode="aspectFill"></image>
         </view>

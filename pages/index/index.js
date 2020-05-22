@@ -32,10 +32,12 @@ Page({
     })
   },
   swiperClick: function (e) {
-    let _this = this;
-    let _index = this.data.current;
+    // let _this = this;
+    // let _index = this.data.current;
+    var postId=e.currentTarget.dataset.postId;
+    console.log(postId);
     wx.navigateTo({
-      url: '../news/news?id=' + _index,
+      url: '../news/news?id=' + postId,
     })
   },
   /**获取活动信息 */
