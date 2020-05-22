@@ -1,6 +1,7 @@
 // pages/newAct/newAct.js
 var util = require('../../utils/util.js');
 var dateTimePicker = require('../../utils/dateTimePicker.js');
+const app = getApp()
 
 Page({
 
@@ -14,13 +15,16 @@ Page({
     startYear: 2020,
     endYear: 2050,
     picker: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    region: ['四川省', '成都市', '双流区'],
+    index: -1,
+    index2: -1,
+    // region: ['四川省', '成都市', '双流区'],
     date: '',
     actdate:'',
     minDate: '',
     actminDate: '',
     imgList: [],
     picker2: ['普通活动', '特殊活动'],
+    modalName: null
   },
 
   //活动类型选择
@@ -36,9 +40,14 @@ Page({
       date: e.detail.value
     })
   },
-  ActDateChange(e){
+  ActDateChange(e) {
     this.setData({
       actdate: e.detail.value
+    })
+  },
+  PickerChange(e) {
+    this.setData({
+      index: e.detail.value
     })
   },
   // DateTimeChange(e) {
@@ -100,6 +109,58 @@ Page({
       textareaBValue: e.detail.value
     })
   },
+
+  postNewAct(e) {
+    var DATE = util.formatDate(new Date());
+    var that = this
+    // console.log(that.data.actdate)
+    if (e.detail.value.name == '' || that.data.index2 == -1 || that.data.index == -1) {
+      that.setData({
+        modalName: 'ModalIncomplete'
+      })
+      return
+    }
+    wx.request({
+      url: "https://scuxingzhi.top:8080/activity/create/",
+      // url: "http://127.0.0.1:8000/activity/create/",
+      method: "POST",
+      data: {
+        open_id: app.globalData.openid,
+        name: e.detail.value.name,
+        type: that.data.picker2[that.data.index2],
+        event_date: that.data.actdate,
+        end_date: that.data.date,
+        start_date: DATE,
+        recruit_num: that.data.picker[that.data.index],
+        description: e.detail.value.description,
+      },
+      success: function (res) {
+        that.setData({
+          modalName: 'Modal'
+        })
+      },
+      fail: function (res) {
+        that.setData({
+          modalName: 'ModalFail'
+        })
+      }
+    })
+  },
+
+
+  hideModal() {
+    this.setData({
+      modalName: null
+    })
+  },
+
+  createSuccess() {
+    this.hideModal()
+    wx.redirectTo({
+      url: '/pages/index/index',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

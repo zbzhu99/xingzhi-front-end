@@ -20,7 +20,8 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useCompilerModule": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.2",
@@ -68,12 +69,6 @@
 					"name": "pages/geRenInfo/geRenInfo",
 					"pathName": "pages/geRenInfo/geRenInfo",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/newAct/newAct",
-					"pathName": "pages/newAct/newAct",
 					"scene": null
 				}
 			]

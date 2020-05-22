@@ -51,7 +51,7 @@ Page({
         that.setData({
           actiList: res.data,
         })
-        console.log(actiList)
+        console.log(that.data.actiList)
       },
       fail: function () {
         // fail
@@ -90,8 +90,8 @@ Page({
     }
   },
   onLoad: function () {
-    this.getActiList()
-    this.getSwiperList()
+    // this.getActiList()
+    // this.getSwiperList()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -119,6 +119,15 @@ Page({
       })
     }
   },
+
+    /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.getActiList()
+    this.getSwiperList()
+  },
+
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

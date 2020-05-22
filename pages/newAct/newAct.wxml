@@ -3,26 +3,26 @@
   <view slot="backText">返回</view>
   <view slot="content">新建活动发布</view>
 </cu-custom>
-<view class="flex  padding justify-between">
-  <view class=" padding-sm  ">新建活动发布</view>
-  <view class="flex  padding justify-end">
-    <!-- <button class="cu-btn bg-gray">取消</button> -->
-    <button class="cu-btn bg-green">发布</button>
-  </view>
-</view>
 
-<form>
+<form bindsubmit="postNewAct">
+  <view class="flex  padding justify-between">
+    <view class=" padding-sm  ">新建活动发布</view>
+    <view class="flex  padding justify-end">
+      <!-- <button class="cu-btn bg-gray">取消</button> -->
+      <button class="cu-btn bg-green" formType="submit">发布</button>
+    </view>
+  </view>
   <view class="cu-form-group ">
     <view class="title">活动名称</view>
-    <input placeholder='输入活动名称' ></input>
+    <input placeholder='输入活动名称' name="name"></input>
   </view>
   <view class="cu-form-group ">
     <view class="title">活动类型</view>
     <picker bindchange="PickerChangeAct" value="{{index2}}" range="{{picker2}}">
-			<view class="picker">
-				{{index2?picker2[index2]:'请选择活动类型'}}
-			</view>
-		</picker>
+      <view class="picker" name="type">
+        {{index2!=-1?picker2[index2]:'请选择活动类型'}}
+      </view>
+    </picker>
   </view>
   <!-- <view class="cu-form-group ">
     <view class="title">活动时间</view>
@@ -33,29 +33,29 @@
         </picker>
   </view> -->
   <view class="cu-form-group">
-		<view class="title">活动时间</view>
-		<picker mode="date" value="{{actdate}}" start="{{actminDate}}" bindchange="ActDateChange">
-			<view class="picker">
-				{{actdate}}
-			</view>
-		</picker>
-	</view>
+    <view class="title">活动时间</view>
+    <picker mode="date" value="{{actdate}}" start="{{actminDate}}" bindchange="ActDateChange">
+      <view class="picker">
+        {{actdate}}
+      </view>
+    </picker>
+  </view>
   <view class="cu-form-group">
-		<view class="title">报名截止日期</view>
-		<picker mode="date" value="{{date}}" start="{{mindate}}" end="{{actdate}}" bindchange="DateChange">
-			<view class="picker">
-				{{date}}
-			</view>
-		</picker>
-	</view>
+    <view class="title">报名截止日期</view>
+    <picker mode="date" value="{{date}}" start="{{mindate}}" end="{{actdate}}" bindchange="DateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+  </view>
   <view class="cu-form-group ">
-		<view class="title">招募人数</view>
-		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
-			<view class="picker">
-				{{index?picker[index]:'选择活动招募人数'}}
-			</view>
-		</picker>
-	</view>
+    <view class="title">招募人数</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker" name="recruit_num">
+        {{index!=-1?picker[index]:'选择活动招募人数'}}
+      </view>
+    </picker>
+  </view>
   <!-- <view class="cu-form-group">
 		<view class="title">活动地址</view>
 		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
@@ -65,9 +65,9 @@
 		</picker>
 	</view> -->
   <view class="cu-form-group ">
-		<view class="title">活动简介</view>
-		<textarea  maxlength="-1" bindinput="textareaBInput" placeholder="简要描述活动内容"></textarea>
-	</view>
+    <view class="title">活动简介</view>
+    <textarea maxlength="-1" bindinput="textareaBInput" placeholder="简要描述活动内容" name="description"></textarea>
+  </view>
   <!-- <view class="cu-form-group">
 		<view class="action">
 			图片上传
@@ -90,3 +90,55 @@
 		</view>
 	</view> -->
 </form>
+
+<!-- 提示框 -->
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <!-- <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view> -->
+    <view class="padding-xl">
+      创建活动成功
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub solid-left" bindtap="createSuccess">确定</view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='ModalFail'?'show':''}}">
+  <view class="cu-dialog">
+    <!-- <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view> -->
+    <view class="padding-xl">
+      创建失败
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub solid-left" bindtap="hideModal">确定</view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='ModalIncomplete'?'show':''}}">
+  <view class="cu-dialog">
+    <!-- <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view> -->
+    <view class="padding-xl">
+      请填写完整活动信息
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub solid-left" bindtap="hideModal">确定</view>
+    </view>
+  </view>
+</view>
