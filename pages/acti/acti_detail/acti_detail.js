@@ -42,9 +42,17 @@ Page({
       // header: {}, // 设置请求的 header
       success: function (res) {
         // success
-        that.setData({
-          actiList: res.data[Id - 1],
-        })
+        for (var i = 0; i < res.data.length; ++i) {
+          if (res.data[i].id == Id) {
+            that.setData({
+              actiList: res.data[i],
+            })
+            break
+          }
+        }
+        // that.setData({
+        //   actiList: res.data[Id - 1],
+        // })
       },
       fail: function () {
         // fail

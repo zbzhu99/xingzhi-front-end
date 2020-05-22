@@ -264,7 +264,7 @@ button.icon.lg {
   background-color: #66cccc;
 }
 .bg-7 {
-  background-color: #66ffcc;
+  background-color: #9999cc;
 }
 .status1 {
   background-color: #ACBFEA;
