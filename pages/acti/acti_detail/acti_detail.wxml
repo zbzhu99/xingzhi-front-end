@@ -80,7 +80,7 @@
         </view>
        </view>
 
-    <button wx:if="{{relation==0||relation==2}}" bindtap = 'sign' class='button' hover-class='button-hover'>
+    <button wx:if="{{actiList.status==1&&(relation==0||relation==2)}}" bindtap = 'sign' class='button' hover-class='button-hover'>
       我要报名
     </button>
     <button wx:elif="{{actiList.status==1}}" bindtap='unsign' class='button-yellow' hover-class='button-hover'>

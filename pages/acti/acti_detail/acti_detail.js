@@ -142,7 +142,8 @@ Page({
       success: function (res) {
         that.setData({
           modalName: 'Modal',
-          modalContent: '抽取成功'
+          modalContent: '抽取成功',
+          'actiList.status': 3
         })
         that.onShow()
       }

@@ -1,5 +1,7 @@
 // pages/Release/Release.js
-var dataObj = require("../../data/act_list.js");
+// var dataObj = require("../../data/act_list.js");
+const app = getApp()
+
 Page({
 
   /**
@@ -15,9 +17,9 @@ Page({
   onLoad: function (options) {
     // this.getActiList()
     var that = this;
-    that.setData({
-      actList: dataObj.actList
-    })
+    // that.setData({
+      // actList: dataObj.actList
+    // })
     wx.getUserInfo({
       success: function (res) {
         that.setData({
@@ -38,7 +40,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this
+    wx.request({
+      url: app.globalData.URL + '/enroll/user/',
+      method: 'POST',
+      data: {
+        open_id: app.globalData.openid
+      },
+      success: function (res) {
+        that.setData({
+          actiList: res.data,
+        })
+        console.log(that.data.actiList)
+      }
+    })
   },
 
   /**

@@ -37,17 +37,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.getActiList()
-    wx.getUserInfo({
-      success: function (res) {
-        that.setData({
-          userInfoAvatar: res.userInfo.avatarUrl,
-        })
-      }
-    })
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var that = this
     wx.request({
-      url: app.globalData.URL + '/activity/info',
+      url: app.globalData.URL + '/activity/info/',
       method: 'POST',
       data: {
         open_id: app.globalData.openid
@@ -62,20 +68,6 @@ Page({
         console.log("获取用户已发布活动数据失败!")
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**

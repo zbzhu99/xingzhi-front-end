@@ -53,7 +53,7 @@ Page({
         that.setData({
           actiList: res.data,
         })
-        console.log(that.data.actiList)
+        // console.log(that.data.actiList)
       },
       fail: function () {
         // fail

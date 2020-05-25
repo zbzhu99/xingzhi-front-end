@@ -4,35 +4,17 @@
 </cu-custom>
 
 <view class="cu-card case {{isCard?'no-card':''}}">
-  <view class="cu-item shadow" wx:for="{{ actList }}">
+  <view class="cu-item shadow" wx:for="{{ actiList }}">
     <!-- 活动图片 -->
-    <view class="image">
-      <image src="{{item.image}}" mode="widthFix"></image>
+    <view>
+      <!-- <image src="{{item.image}}" mode="widthFix"></image> -->
       <!-- 考虑status=4 已结束 -->
-      <view wx:if="{{ item.state == 1 }}" class="cu-tag bg-blue">招募中</view>
-      <view wx:if="{{ item.state == 2 }}" class="cu-tag bg-blue">待抽签</view>
-      <view wx:if="{{ item.state == 3 }}" class="cu-tag bg-blue">已抽签</view>
+      <view wx:if="{{ item.activity_status == 1 }}" class="cu-tag bg-blue"> 待抽签 </view>
+      <view wx:if="{{ item.activity_status == 3 && item.isPicked == false }}" class="cu-tag bg-blue">未抽中</view>
+      <view wx:if="{{ item.activity_status == 3 && item.isPicked == true }}" class="cu-tag bg-blue">已抽中</view>
       <view class="cu-bar bg-shadeBottom">
-        <text class="text-cut">{{item.title}}</text>
+        <text class="text-cut">{{item.activity_name}}</text>
       </view>
     </view>
-    <!-- 信息栏 -->
-    <view class="cu-list menu-avatar">
-      <view class="cu-item">
-        <image class="cu-avatar round lg" src="{{userInfoAvatar}}"></image>
-        <view class="content flex-sub">
-          <view class="text-grey">张三</view>
-          <!-- <view class="text-gray ">
-            <text >活动时间：2020-5-20</text>
-          </view> -->
-          <view class="text-gray text-sm flex justify-between">
-            招募人数:
-            <view class="text-gray text-sm">
-              <text class=" margin-lr-xs"></text>活动时间
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
+</view>
 </view>
