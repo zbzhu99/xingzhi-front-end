@@ -121,8 +121,7 @@ Page({
       return
     }
     wx.request({
-      url: "https://scuxingzhi.top:8080/activity/create/",
-      // url: "http://127.0.0.1:8000/activity/create/",
+      url: app.globalData.URL + "/activity/create/",
       method: "POST",
       data: {
         open_id: app.globalData.openid,
@@ -156,7 +155,7 @@ Page({
 
   createSuccess() {
     this.hideModal()
-    wx.redirectTo({
+    wx.switchTab({
       url: '/pages/index/index',
     })
   },

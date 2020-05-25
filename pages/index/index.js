@@ -44,7 +44,7 @@ Page({
   getActiList() {
     let that = this
     wx.request({
-      url: 'https://scuxingzhi.top:8080/activity/info',
+      url: app.globalData.URL + '/activity/info',
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header

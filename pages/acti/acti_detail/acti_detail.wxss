@@ -254,3 +254,30 @@ button::after {
   background-color:grey;
    color: white;
 }
+.button-red{
+  background-color: red;
+  font-size: 16px;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 500rpx;
+  color: white;
+}
+.button-yellow{
+  background-color: rgb(255, 174, 0);
+  font-size: 16px;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 500rpx;
+  color: white;
+}
+.button-blue{
+  background-color: blue;
+  font-size: 16px;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 500rpx;
+  color: white;
+}
