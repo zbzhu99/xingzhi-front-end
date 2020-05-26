@@ -15,8 +15,7 @@ Page({
   saveMyInfo: function (e) {
     var that = this
     wx.request({
-      // url: 'http://127.0.0.1:8000/user/update/',
-      url: 'https://scuxingzhi.top:8080/user/update/',
+      url: app.globalData.URL + '/user/update/',
       method: 'POST',
       data: {
         open_id: app.globalData.openid,

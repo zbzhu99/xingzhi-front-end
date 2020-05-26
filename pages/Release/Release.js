@@ -1,12 +1,14 @@
 // pages/Release/Release.js
-var dataObj = require("../../data/act_list.js");
+// var dataObj = require("../../data/act_list.js");
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // actiList: [],
+    actiList: [],
   },
 
   // 获取活动列表
@@ -35,18 +37,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.getActiList()
-    var that = this;
-    that.setData({
-      actList: dataObj.actList
-    })
-    wx.getUserInfo({
-      success: function (res) {
-        that.setData({
-          userInfoAvatar: res.userInfo.avatarUrl,
-        })
-      }
-    })
+
   },
 
   /**
@@ -60,7 +51,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this
+    wx.request({
+      url: app.globalData.URL + '/activity/info/',
+      method: 'POST',
+      data: {
+        open_id: app.globalData.openid
+      },
+      success: function (res) {
+        that.setData({
+          actiList: res.data
+        })
+        console.log(res.data)
+      },
+      fail: function (res) {
+        console.log("获取用户已发布活动数据失败!")
+      }
+    })
   },
 
   /**

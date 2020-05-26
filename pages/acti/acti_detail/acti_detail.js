@@ -11,7 +11,9 @@ Page({
     actiList: {},
     curId: 0,
     nameList: [],
-    
+    relation: null,
+    modalContent: null,
+    modalName: null
   },
   /**抽取 */
   fxselect: function (e) {
@@ -36,7 +38,7 @@ Page({
   getActiList(Id) {
     let that = this
     wx.request({
-      url: 'https://scuxingzhi.top:8080/activity/info',
+      url: app.globalData.URL + '/activity/info',
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
@@ -74,32 +76,99 @@ Page({
     })
   },
   sign: function (e) {
-    //后端有写么？
-    /** 
-    console.log('报名活动/取消活动')
-    let that = this
+    var that = this
     wx.request({
-      url: 'https://scuxingzhi.top:8080/activity/info',
+      url: app.globalData.URL + '/enroll/create/',
       method: 'POST',
       data: {
-
+        open_id: app.globalData.openid,
+        activity_id: that.data.curId
       },
-      header: {
-        'content-type': 'application/json' // 默认值x-www-form-urlencoded
-      },
-      success(res) {
-        wx.showToast({
-          title: '报名成功',
-          icon: 'success',
-          duration: 1000
+      success: function (res) {
+        that.setData({
+          modalName: 'Modal',
+          modalContent: '报名成功'
         })
-        wx.reLaunch({
-          url: '../../index/index'
-        })
-
+        that.onShow()
+        // console.log("报名成功")
       }
-    })*/
+    })
   },
+  unsign: function () {
+    var that = this
+    wx.request({
+      url: app.globalData.URL + '/enroll/delete/',
+      method: 'POST',
+      data: {
+        open_id: app.globalData.openid,
+        activity_id: that.data.curId
+      },
+      success: function (res) {
+        that.setData({
+          modalName: 'Modal',
+          modalContent: '取消成功'
+        })
+        that.onShow()
+        // console.log("取消报名!")
+      }
+    })
+  },
+  delete: function() {
+    var that = this
+    wx.request({
+      url: app.globalData.URL + '/activity/delete/',
+      method: 'POST',
+      data: {
+        open_id: app.globalData.openid,
+        activity_id: that.data.curId
+      },
+      success: function (res) {
+        that.setData({
+          modalName: 'ModalDelete',
+          modalContent: '删除成功'
+        })
+      }
+    })
+  },
+  pick: function () {
+    var that = this
+    wx.request({
+      url: app.globalData.URL + '/enroll/pick/',
+      method: 'POST',
+      data: {
+        open_id: app.globalData.openid,
+        activity_id: that.data.curId
+      },
+      success: function (res) {
+        that.setData({
+          modalName: 'Modal',
+          modalContent: '抽取成功',
+          'actiList.status': 3
+        })
+        that.onShow()
+      }
+    })
+  },
+
+  hideModal: function () {
+    var that = this
+    that.setData({
+      modalName: null,
+      // modalContent: null
+    })
+  },
+  hideModalDelete: function () {
+    var that = this
+    that.setData({
+      modalName: null,
+      // modalContent: null
+    })
+    wx.switchTab({
+      url: '../../index/index',
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -108,7 +177,23 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () {
+    var that = this
+    wx.request({
+      url: app.globalData.URL + '/activity/relation/',
+      method: 'POST',
+      data: {
+        open_id: app.globalData.openid,
+        activity_id: that.data.curId
+      },
+      success: function (res) {
+        console.log(res.data.relation)
+        that.setData({
+          relation: res.data.relation
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
