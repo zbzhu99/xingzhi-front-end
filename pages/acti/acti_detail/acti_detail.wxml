@@ -62,7 +62,7 @@
         </view>
        </view>
         <text class="post-content">{{actiList.description}}</text>
-        <image src='../../../images/1.png' class="ime" mode="aspectFill"></image>
+        <!-- <image src='../../../images/1.png' class="ime" mode="aspectFill"></image> -->
          <!-- 活动负责人 -->
        <view class="cu-bar bg-white">
         <view class="action">
