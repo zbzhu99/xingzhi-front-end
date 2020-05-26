@@ -37,7 +37,7 @@
     <!--活动详情-->
     <view>
       <!--每一个活动-->
-      <navigator url="../acti/acti_detail/acti_detail?id={{ item.id }}" class="Acti_item bg-{{ item.id }} shadow-blur" wx:for="{{ actiList }}">
+      <navigator url="../acti/acti_detail/acti_detail?id={{ item.id }}" class="Acti_item bg-{{ item.id%8 }} shadow-blur" wx:for="{{ actiList }}">
         <view class="Acti_Detail">
           <!--活动标题-->
           <view class="Acti_Title">

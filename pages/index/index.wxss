@@ -245,6 +245,9 @@ button.icon.lg {
   margin-right: 20rpx;
 }
 /**先弄七个颜色，如果活动超出7个..再配色吧*/
+.bg-0{
+  background-color: #6495ED;
+}
 .bg-1 {
   background-color: #C29E80;
 }

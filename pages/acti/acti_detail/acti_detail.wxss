@@ -242,7 +242,7 @@ button::after {
   display: flex;
 }
 .button{
-  background-color: #4CAF50;
+  background-color: #33CC99;
   font-size: 16px;
   border-radius: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -251,11 +251,11 @@ button::after {
   color: white;
 }
 .button-hover{
-  background-color:grey;
+  background-color:#99CCCC;
    color: white;
 }
 .button-red{
-  background-color: red;
+  background-color:#FF9966;
   font-size: 16px;
   border-radius: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -264,7 +264,7 @@ button::after {
   color: white;
 }
 .button-yellow{
-  background-color: rgb(255, 174, 0);
+  background-color:#99CCCC;
   font-size: 16px;
   border-radius: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -280,4 +280,7 @@ button::after {
   transition-duration: 0.4s;
   width: 500rpx;
   color: white;
+}
+.button-margin{
+  margin-bottom: 20rpx;
 }
