@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function() {
+    var that = this
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -18,7 +19,7 @@ App({
             code: code
           }
           wx.request({
-            url: 'https://scuxingzhi.top:8080/user/login/',
+            url: that.globalData.URL + '/user/login/',
             // url: 'http://127.0.0.1:8000/user/login/',
             method: 'POST',
             data: { code: res.code },
