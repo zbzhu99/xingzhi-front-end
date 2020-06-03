@@ -80,7 +80,7 @@ App({
     userInfo: null,
     openid: null,
     is_filled: 0,
-    URL: 'https://scuxingzhi.top:8080'
-    // URL: 'http://127.0.0.1:8000'
+    // URL: 'https://scuxingzhi.top:8080',
+    URL: 'http://127.0.0.1:8000',
   }
 })

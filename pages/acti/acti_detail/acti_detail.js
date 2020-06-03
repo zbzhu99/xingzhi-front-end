@@ -130,14 +130,16 @@ Page({
       }
     })
   },
-  pick: function () {
+  pick: function (e) {
     var that = this
+    console.log(e.detail.value.num)
     wx.request({
       url: app.globalData.URL + '/enroll/pick/',
       method: 'POST',
       data: {
         open_id: app.globalData.openid,
-        activity_id: that.data.curId
+        activity_id: that.data.curId,
+        pick_num: e.detail.value.num,
       },
       success: function (res) {
         that.setData({
@@ -187,9 +189,22 @@ Page({
         activity_id: that.data.curId
       },
       success: function (res) {
-        console.log(res.data.relation)
+        // console.log(res.data.relation)
         that.setData({
           relation: res.data.relation
+        })
+      }
+    })
+    wx.request({
+      url: app.globalData.URL + '/enroll/activity/',
+      method: 'POST',
+      data: {
+        activity_id: that.data.curId
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          nameList: res.data
         })
       }
     })

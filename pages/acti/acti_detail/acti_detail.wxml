@@ -82,12 +82,12 @@
           <button wx:elif="{{actiList.status==1}}" bindtap='unsign' class='button-yellow button-margin' hover-class='button-hover'>
             取消报名
           </button>
-          <button wx:if="{{(relation==2||relation==3)&&actiList.status==1}}" bindtap='pick' class='button-blue button-margin' hover-class='button-hover'>
+          <!-- <button wx:if="{{(relation==2||relation==3)&&actiList.status==1}}" bindtap='pick' class='button-blue button-margin' hover-class='button-hover'>
             抽取参与人员
           </button>
           <button wx:if="{{(relation==2||relation==3)&&actiList.status==3}}" bindtap='pick' class='button-blue button-margin' hover-class='button-hover'>
             已抽签
-          </button>
+          </button> -->
           <button wx:if="{{relation==2||relation==3}}" bindtap='delete' class='button-red button-margin' hover-class='button-hover'>
             删除活动
           </button>
@@ -106,7 +106,7 @@
       </view>
       <view wx:for="{{ nameList }}" class="name">
         <view class="bg-green shadow-blur name-card">
-          {{ item }}
+          {{ item.user_name }}
         </view>
       </view>
     </view>
@@ -117,24 +117,24 @@
         已抽中成员
       </view>
       <view wx:for="{{ nameList }}" class="name">
-        <view class="bg-green shadow-blur name-card"> {{ item }} </view>
+        <view wx:if="{{ item.isPicked==true }}" class="bg-green shadow-blur name-card"> {{ item.user_name }} </view>
       </view>
     </view>
   </view>
-  <form bindsubmit="fxselect" class="first">
+  <form bindsubmit="pick" class="first">
     <view class="select">抽取</view>
-    <input name="num" class="input1" placeholder="输入抽取人数" />
+    <input name="num" class="input1" type="number" placeholder="输入抽取人数" />
     <button formType="submit" class="btn">
       <image class="img1" mode="widthFix" src="../../../icon/zhuazi.png"></image>
     </button>
   </form>
-  <form bindsubmit="fxselect" class="first">
+  <!-- <form bindsubmit="fxselect" class="first">
     <view class="select">补录</view>
     <input name="num" class="input1" placeholder="输入补录人数" />
     <button formType="submit" class="btn">
       <image class="img1" mode="widthFix" src="../../../icon/zhuazi.png"></image>
     </button>
-  </form>
+  </form> -->
 </view>
 
 <view class="cu-modal {{modalName=='Modal'?'show':''}}">
