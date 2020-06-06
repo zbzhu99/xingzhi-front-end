@@ -121,13 +121,15 @@
       </view>
     </view>
   </view>
-  <form bindsubmit="pick" class="first">
+  <view wx:if="{{relation==2||relation==3}}" >
+    <form bindsubmit="pick" class="first">
     <view class="select">抽取</view>
     <input name="num" class="input1" type="number" placeholder="输入抽取人数" />
     <button formType="submit" class="btn">
       <image class="img1" mode="widthFix" src="../../../icon/zhuazi.png"></image>
     </button>
   </form>
+  </view>
   <!-- <form bindsubmit="fxselect" class="first">
     <view class="select">补录</view>
     <input name="num" class="input1" placeholder="输入补录人数" />

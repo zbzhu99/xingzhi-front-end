@@ -4,7 +4,7 @@
 </cu-custom>
 
 <view class="cu-card case {{isCard?'no-card':''}}">
-  <view class="cu-item shadow" wx:for="{{ actiList }}">
+  <navigator url="../acti/acti_detail/acti_detail?id={{ item.activity_id }}" view class="cu-item shadow" wx:for="{{ actiList }}">
     <!-- 活动图片 -->
     <view>
       <!-- <image src="{{item.image}}" mode="widthFix"></image> -->
@@ -12,9 +12,9 @@
       <view wx:if="{{ item.activity_status == 1 }}" class="cu-tag bg-blue"> 待抽签 </view>
       <view wx:if="{{ item.activity_status == 3 && item.isPicked == false }}" class="cu-tag bg-blue">未抽中</view>
       <view wx:if="{{ item.activity_status == 3 && item.isPicked == true }}" class="cu-tag bg-blue">已抽中</view>
-      <view class="cu-bar bg-shadeBottom">
-        <text class="text-cut">{{item.activity_name}}</text>
+      <view class="content bg-green shadow-blur" style="dispaly:flex;text-align:center;">
+        <text>【{{item.activity_name}}】</text>
       </view>
     </view>
-</view>
+  </navigator>
 </view>

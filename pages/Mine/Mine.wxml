@@ -29,12 +29,12 @@
       <text class="text-grey">已参加活动</text>
     </navigator>
   </view>
-  <view class="cu-item arrow">
+  <!-- <view class="cu-item arrow">
     <navigator class="content" url="/pages/Advice/Advice" hover-class="none">
       <image src="/icon/advice.png" class="png" mode="aspectFit"></image>
       <text class="text-grey">意见反馈</text>
     </navigator>
-  </view>
+  </view> -->
   <view class="cu-item arrow">
     <navigator class="content" url="/pages/About/About" hover-class="none">
       <image src="/icon/team.png" class="png" mode="aspectFit"></image>
