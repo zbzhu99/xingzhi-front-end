@@ -154,6 +154,7 @@ button.icon.lg {
   font-weight: 1000;
 }
 .input1 {
+  margin-top: 20rpx;
   width: 300rpx;
   padding-left: 68rpx;
 }
@@ -168,111 +169,114 @@ button::after {
   border: none;
 }
 .post-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20rpx;
-    margin-bottom: 40rpx;
-    background-color: #fff;
-    border-bottom: 1px solid #ededed;
-    border-top: 1px solid #ededed;
-    padding-bottom: 15px;
-    padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  padding-bottom: 15px;
+  padding-top: 10px;
 }
 .post-author-date {
-    float:right;
-    margin-top: 25rpx;
-    margin-right: 40rpx;
+  float: right;
+  margin-top: 25rpx;
+  margin-right: 40rpx;
 }
 
 .post-author {
-    width: 60rpx;
-    height: 60rpx;
-    vertical-align: middle;
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
 }
 
 .post-date {
-    font-weight: bold;
-    margin-left: 20px;
-    vertical-align: middle;
-    font-size: 30rpx;
-    float:right;
+  font-weight: bold;
+  margin-left: 20px;
+  vertical-align: middle;
+  font-size: 30rpx;
+  float: right;
 }
 
 .post-title {
-    /* font-weight: 600; */
-    font-weight: bold;
-    /* color: #333; */
-    font-size: 30rpx;
-    margin-left: 20px;
+  /* font-weight: 600; */
+  font-weight: bold;
+  /* color: #333; */
+  font-size: 30rpx;
+  margin-left: 20px;
 }
 .post-num {
-    /* font-weight: 600; */
-    /* color:orange; */
-    font-weight: bold;
-    margin-left: 20px;
-    font-size: 30rpx;
+  /* font-weight: 600; */
+  /* color:orange; */
+  font-weight: bold;
+  margin-left: 20px;
+  font-size: 30rpx;
 }
 .post-content {
-    /* color:#1cbbb4; */
-    font-size: 28rpx;
-    margin-bottom: 20rpx;
-    margin-left: 20rpx;
-    letter-spacing: 2rpx;
-    line-height: 40rpx;
-    word-break:break-all;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    text-indent: 60rpx;    /* 首行缩进60rpx */
-		text-align: left;
+  /* color:#1cbbb4; */
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+  letter-spacing: 2rpx;
+  line-height: 40rpx;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  text-indent: 60rpx; /* 首行缩进60rpx */
+  text-align: left;
 }
-.post-phone{
-    font-weight: 600;
-    /* color:pink; */
-    margin-left: 20px;
+.post-phone {
+  font-weight: 600;
+  /* color:pink; */
+  margin-left: 20px;
 }
-.post-man{
-    font-weight: 600;
-    margin-left: 20px;
+.post-man {
+  font-weight: 600;
+  margin-left: 20px;
 }
-.ime{
+.ime {
   margin-left: 50rpx;
   margin-right: 50rpx;
   height: 300rpx;
   display: flex;
 }
-.button{
-  background-color: #33CC99;
+.button {
+  background-color: #33cc99;
   font-size: 16px;
   border-radius: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   width: 500rpx;
   color: white;
+  margin-left: 120rpx;
 }
-.button-hover{
-  background-color:#99CCCC;
-   color: white;
+.button-hover {
+  background-color: #aeb0d6;
+  color: white;
 }
-.button-red{
-  background-color:#FF9966;
+.button-red {
+  background-color: #a276ae;
   font-size: 16px;
   border-radius: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   width: 500rpx;
   color: white;
+  margin-left: 120rpx;
 }
-.button-yellow{
-  background-color:#99CCCC;
+.button-yellow {
+  background-color: #aeb0d6;
   font-size: 16px;
   border-radius: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   width: 500rpx;
   color: white;
+  margin-left: 120rpx;
 }
-.button-blue{
+.button-blue {
   background-color: blue;
   font-size: 16px;
   border-radius: 12px;
@@ -280,7 +284,12 @@ button::after {
   transition-duration: 0.4s;
   width: 500rpx;
   color: white;
+  margin-left: 120rpx;
 }
-.button-margin{
-  margin-bottom: 20rpx;
+.button-margin {
+  margin-top: 50rpx;
+}
+
+.text-yellow{
+  color: #440286
 }

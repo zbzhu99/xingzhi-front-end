@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+<cu-custom bgColor="bg-top" isBack="{{true}}">
   <view slot="backText">返回</view>
   <view slot="content">已发布活动</view>
 </cu-custom>
@@ -19,12 +19,12 @@
 
 <view class="cu-card case {{isCard?'no-card':''}}">
   <navigator url="../acti/acti_detail/acti_detail?id={{ item.id }}" view class="cu-item shadow" wx:for="{{ actiList }}">
-    <view class="cu-item shadow" >
+    <view class="cu-item shadow">
       <view class="image">
-        <image src="/images/bg-{{item.id%4}}.png" mode="widthFix" ></image>
+        <image src="/images/bg-{{item.id%4}}.png" mode="widthFix"></image>
         <view wx:if="{{ item.status == 1 }}" class="cu-tag bg-blue"> 待抽签 </view>
-        <view wx:if="{{ item.status == 2 && item.isPicked == false }}" class="cu-tag bg-blue">未抽中</view>
-        <view wx:if="{{ item.status == 3 && item.isPicked == true }}" class="cu-tag bg-blue">已抽中</view>
+        <view wx:if="{{ item.status !=1 }}" class="cu-tag bg-blue">已抽签</view>
+        <!-- <view wx:if="{{ item.status == 3 && item.isPicked == true }}" class="cu-tag bg-blue">已抽中</view> -->
         <view class="cu-bar ">
           <text class="text-cut">{{item.name}}</text>
         </view>

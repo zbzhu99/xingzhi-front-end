@@ -1,5 +1,5 @@
 <!--pages/Advice/Advice.wxml-->
-<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+<cu-custom bgColor="bg-top" isBack="{{true}}">
   <view slot="backText">返回</view>
   <view slot="content">意见反馈</view>
 </cu-custom>

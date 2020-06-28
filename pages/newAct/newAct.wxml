@@ -1,15 +1,15 @@
 <!--pages/newAct/newAct.wxml-->
-<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+<cu-custom bgColor="bg-top" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">新建活动发布</view>
+  <view slot="content">新建活动报名</view>
 </cu-custom>
 
 <form bindsubmit="postNewAct">
   <view class="flex  padding justify-between">
-    <view class=" padding-sm  ">新建活动发布</view>
+    <view class=" padding-sm  ">新建活动报名</view>
     <view class="flex  padding justify-end">
       <!-- <button class="cu-btn bg-gray">取消</button> -->
-      <button class="cu-btn bg-green" formType="submit">发布</button>
+      <button class="cu-btn bg-green" formType="submit">确认创建</button>
     </view>
   </view>
   <view class="cu-form-group ">
@@ -42,7 +42,7 @@
   </view>
   <view class="cu-form-group">
     <view class="title">报名截止日期</view>
-    <picker mode="date" value="{{date}}" start="{{mindate}}" end="{{actdate}}" bindchange="DateChange">
+    <picker mode="date" value="{{date}}" start="{{minDate}}" end="{{actdate}}" bindchange="DateChange">
       <view class="picker">
         {{date}}
       </view>

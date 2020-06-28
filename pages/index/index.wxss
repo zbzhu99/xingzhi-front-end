@@ -1,6 +1,7 @@
 page {
-  background-color: white;
+  /* background-color: #f7f7f7; */
 }
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -21,12 +22,14 @@ page {
 .usermotto {
   margin-top: 200px;
 }
+
 .remind-img {
   width: 250rpx;
   height: 250rpx;
   padding-bottom: 25rpx;
   margin-top: 350rpx;
 }
+
 .remind-box {
   flex: 1;
   display: flex;
@@ -35,15 +38,28 @@ page {
   justify-content: center;
   padding-bottom: 300rpx;
 }
-.load_content{
-  transform: translate3d(0,100%,0);
-  animation: rise 2s cubic-bezier(0.19, 1, 0.22, 1) .25s forwards;
+
+.load_content {
+  transform: translate3d(0, 100%, 0);
+  animation: rise 2s cubic-bezier(0.19, 1, 0.22, 1) 0.25s forwards;
 }
-@keyframes rise{
-  0% {opacity: 0;transform: translate3d(0,100%,0);}
-  50% {opacity: 1;}
-  100% {opacity: 1;transform: translate3d(0,0rpx,0);}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0rpx, 0);
+  }
 }
+
 .top {
   width: 100%;
   height: 80rpx;
@@ -51,24 +67,18 @@ page {
   display: flex;
   flex-direction: row;
 }
+
 .search_icon {
   width: 80%;
   display: flex;
 }
+
 .search_icon image {
   margin-left: 2%;
   width: 10%;
 }
-.search {
-  width: 81%;
-  height: 60rpx;
-  margin-left: 20rpx;
-  padding-left: 40rpx;
-  border: 1rpx solid #eeeeee;
-  background-color: #eeeeee;
-  border-radius: 5000rpx !important;
-  font-size: 30rpx;
-}
+
+
 .acti-btn {
   color: white;
   position: relative;
@@ -89,6 +99,7 @@ page {
   transform: translate(0rpx, 0rpx);
   margin-right: initial;
 }
+
 .acti-btn::after {
   display: none;
 }
@@ -182,29 +193,33 @@ button.icon.lg {
   opacity: 0.6;
   color: var(--white);
 }
+
 .Acti {
   width: 205rpx;
   display: flex;
   align-items: center;
   margin-top: 15rpx;
   margin-left: 10rpx;
-  margin-bottom: 15rpx;
+  margin-bottom: 30rpx;
 }
+
 .Acti text {
   letter-spacing: 5rpx;
   font-size: 33rpx;
 }
+
 .Acti image {
   width: 18%;
   margin-top: 2rpx;
   margin-left: 5rpx;
   margin-right: 10rpx;
 }
+
 .Acti_item {
   margin-left: 1%;
   width: 98%;
-  height: 215rpx;
-  margin-bottom: 20rpx;
+  height: 100%;
+  margin-bottom: 50rpx;
   border-radius: 15rpx !important;
 }
 
@@ -212,6 +227,7 @@ button.icon.lg {
   display: flex;
   justify-content: space-between;
 }
+
 .Acti_Title {
   display: flex;
   margin-left: 20rpx;
@@ -221,9 +237,11 @@ button.icon.lg {
   letter-spacing: 3rpx;
   color: white;
 }
+
 .underline {
   border-bottom: 1rpx white solid;
 }
+
 .circle {
   width: 30rpx;
   height: 30rpx;
@@ -232,52 +250,106 @@ button.icon.lg {
   margin-right: 10rpx;
   margin-top: 7rpx;
 }
+
 .Acti_Content {
   margin-left: 10rpx;
   font-size: 28rpx;
   color: white;
   letter-spacing: 5rpx;
 }
+
 .status_loca {
+  position: relative;
   width: 92rpx;
   font-size: 30rpx;
-  margin-top: 10rpx;
-  margin-right: 20rpx;
+  margin-left: 600rpx;
+  z-index: 300;
+  margin-bottom: -50rpx;
 }
+
 /**先弄七个颜色，如果活动超出7个..再配色吧*/
-.bg-0{
-  background-color: #6495ED;
+
+.bg-0 {
+  background-color: #6495ed;
 }
+
 .bg-1 {
-  background-color: #C29E80;
+  background-color: #c29e80;
 }
+
 .bg-2 {
-  background-color: #FEB78D;
+  background-color: #feb78d;
 }
+
 .bg-3 {
-  background-color: #9999cc;
+  background-color: #99c;
 }
+
 .bg-4 {
-  background-color: #33cc99;
+  background-color: #3c9;
 }
+
 .bg-5 {
-  background-color: #33ccff;
+  background-color: #3cf;
 }
+
 .bg-6 {
-  background-color: #66cccc;
+  background-color: #6cc;
 }
+
 .bg-7 {
-  background-color: #9999cc;
+  background-color: #99c;
 }
+
 .status1 {
-  background-color: #ACBFEA;
+  background-color: #493564;
   color: white;
 }
+
 .status2 {
-  background-color: #9ADBC5;
+  background-color: #45527e;
   color: white;
 }
+
 .status3 {
-  background-color: #456d77;
+  background-color: #440286;
   color: white;
+}
+
+.haha {
+  display: flex;
+  margin-top: -200rpx;
+}
+
+.bg-meihong {
+  background-color: #9296b2;
+  color: var(--white);
+}
+
+.bg-top {
+background-color: #8ca1e7;
+color: var(--white);
+
+}
+
+.search {
+  width: 81%;
+  height: 60rpx;
+  margin-left: 20rpx;
+  padding-left: 40rpx;
+  border: 1rpx solid #eee;
+  background-color: #8ca1e733;
+  border-radius: 5000rpx !important;
+  font-size: 30rpx;
+}
+
+.padding{
+  padding: 30rpx 30rpx 0rpx 30rpx
+}
+.bg-cyan {
+background-color: #cdafc8;
+color: var(--white);
+}
+.line-cyan{
+  color: #cdafc8
 }

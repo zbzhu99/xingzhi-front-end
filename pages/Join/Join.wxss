@@ -1,3 +1,9 @@
 page{
-  background: #FFFFF0
+  background: #a3aece21
+}
+
+.text-cut{
+  color: #666666;
+  font-weight: bold;
+  font-size: 30px;
 }

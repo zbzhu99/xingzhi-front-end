@@ -1,8 +1,8 @@
-<cu-custom bgColor="bg-yellow">
+<cu-custom bgColor="bg-top">
   <view slot="content">我的</view>
 </cu-custom>
 <!-- 获取用户信息头像 -->
-<view class="bg-yellow padding radius text-center shadow-blur">
+<view class="bg-top padding radius text-center shadow-blur">
   <view class="head">
     <view class="name_icon">
       <image src="{{ userInfoAvatar }}" mode="widthFix"></image>
@@ -20,7 +20,7 @@
   <view class="cu-item arrow">
     <navigator class="content" url="/pages/Release/Release" hover-class="none">
       <image src="/icon/release.png" class="png" mode="aspectFit"></image>
-      <text class="text-grey">已发布活动</text>
+      <text class="text-grey">已负责活动</text>
     </navigator>
   </view>
   <view class="cu-item arrow">

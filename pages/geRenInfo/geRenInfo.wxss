@@ -6,7 +6,7 @@ page {
   align-items: center;
   justify-content: center;
   height: 300rpx;
-  background: #f9d257;
+  background: #8ca1e7;
 }
 .head image {
   width: 160rpx;

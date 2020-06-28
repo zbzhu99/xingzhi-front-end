@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-yellow" isBack="{{true}}">
+<cu-custom bgColor="bg-top" isBack="{{true}}">
   <view slot="backText">返回</view>
   <view slot="content">已参加活动</view>
 </cu-custom>
@@ -6,14 +6,17 @@
 <view class="cu-card case {{isCard?'no-card':''}}">
   <navigator url="../acti/acti_detail/acti_detail?id={{ item.activity_id }}" view class="cu-item shadow" wx:for="{{ actiList }}">
     <!-- 活动图片 -->
-    <view>
-      <!-- <image src="{{item.image}}" mode="widthFix"></image> -->
-      <!-- 考虑status=4 已结束 -->
-      <view wx:if="{{ item.activity_status == 1 }}" class="cu-tag bg-blue"> 待抽签 </view>
-      <view wx:if="{{ item.activity_status == 3 && item.isPicked == false }}" class="cu-tag bg-blue">未抽中</view>
-      <view wx:if="{{ item.activity_status == 3 && item.isPicked == true }}" class="cu-tag bg-blue">已抽中</view>
-      <view class="content bg-green shadow-blur" style="dispaly:flex;text-align:center;">
-        <text>【{{item.activity_name}}】</text>
+    <view class="cu-item shadow">
+      <view class="image">
+        <image src="/images/bg-{{item.activity_id%4}}.png" mode="widthFix"></image>
+        <!-- <image src="{{item.image}}" mode="widthFix"></image> -->
+        <!-- 考虑status=4 已结束 -->
+        <view wx:if="{{ item.activity_status == 1 }}" class="cu-tag bg-blue"> 待抽签 </view>
+        <view wx:if="{{ item.activity_status == 3 && item.isPicked == false }}" class="cu-tag bg-blue">未抽中</view>
+        <view wx:if="{{ item.activity_status == 3 && item.isPicked == true }}" class="cu-tag bg-blue">已抽中</view>
+        <view class="cu-bar ">
+          <text class="text-cut">{{item.activity_name}}</text>
+        </view>
       </view>
     </view>
   </navigator>

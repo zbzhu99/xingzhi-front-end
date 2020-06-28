@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/Mine/Mine",
     "pages/geRenInfo/geRenInfo",
@@ -12,7 +11,6 @@
     "pages/acti/acti",
     "pages/acti/acti_detail/acti_detail",
     "pages/news/news"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,25 +20,27 @@
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
+    "wux-card": "/dist/card/index",
+    "wux-wing-blank": "/dist/wing-blank/index",
     "cu-custom": "/colorui/components/cu-custom"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#515151",
-    "selectedColor": "#f37b1d",
+    "selectedColor": "#62102e",
     "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "icon/moon.png",
-        "selectedIconPath": "icon/sun.png"
+        "iconPath": "icon/index0.png",
+        "selectedIconPath": "icon/index1.png"
       },
       {
         "pagePath": "pages/Mine/Mine",
         "text": "我的",
-        "iconPath": "icon/bear.png",
-        "selectedIconPath": "icon/rabbit.png"
+        "iconPath": "icon/mine0.png",
+        "selectedIconPath": "icon/mine1.png"
       }
     ]
   }

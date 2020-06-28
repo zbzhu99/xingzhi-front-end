@@ -1,10 +1,16 @@
 <view>
-  <cu-custom bgColor="bg-yellow" isBack="{{ true }}">
+  <cu-custom bgColor="bg-top" isBack="{{ true }}">
     <view slot="backText">返回</view>
     <view slot="content">活动</view>
   </cu-custom>
   <scroll-view scroll-x class="bg-white nav text-center">
-    <view class="cu-item {{ index == TabCur ? 'text-yellow cur' : '' }}" style="margin-right: 100rpx; margin-left: 100rpx;" wx:for="{{ choose }}" bindtap="tabSelect" data-id="{{ index }}">
+    <view
+      class="cu-item {{ index == TabCur ? 'text-yellow cur' : '' }}"
+      style="margin-right: 100rpx; margin-left: 100rpx;"
+      wx:for="{{ choose }}"
+      bindtap="tabSelect"
+      data-id="{{ index }}"
+    >
       {{ item }}
     </view>
   </scroll-view>
@@ -13,162 +19,198 @@
     <view class="post-container">
       <view class="post-author-date">
         <!--这里应该要改下数据结构 就是我新增了一个author，需要放发布者的的头像和名字 先用名字代替 -->
-        <image class="cu-avatar lg round margin-left" src="{{info.author.avatar}}"></image>
-        <text class='margin-left text-grey'>{{actiList.organizer_name}}</text>
-        <!-- info.author.username-->
-        <text class="post-author-date ">{{actiList.name}}</text>
-        <!--info.created_at-->
-        <!-- 活动名称-->
-        <view class="cu-bar bg-white">
-          <view class="action">
-            <text class="cuIcon-title text-orange"></text>
-            <text>活动名称</text>
-            <text class="post-title">{{actiList.name}}</text>
-          </view>
-        </view>
-        <!-- 活动时间 -->
-        <view class="cu-bar bg-white">
-          <view class="action">
-            <text class="cuIcon-title text-red"></text>
-            <text>活动时间</text>
-            <text class="post-date">{{actiList.event_date}}</text>
-          </view>
-        </view>
-        <!-- 报名时间 -->
-        <view class="cu-bar bg-white">
-          <view class="action">
-            <text class="cuIcon-title text-blue"></text>
-            <text>报名时间</text>
-            <text class="post-date">{{actiList.start_date}}至{{actiList.end_date}}</text>
-          </view>
-        </view>
-        <!-- 活动招募人数 -->
-        <view class="cu-bar bg-white">
-          <view class="action">
-            <text class="cuIcon-title text-yellow"></text>
-            <text>活动招募人数</text>
-            <text class="post-num">{{actiList.recruit_num}}人</text>
-          </view>
-        </view>
-        <!-- 活动详情 -->
-        <view class="cu-bar bg-white">
-          <view class="action">
-            <text class="cuIcon-title text-green"></text>
-            <text>活动详情</text>
-          </view>
-        </view>
-        <text class="post-content">{{actiList.description}}</text>
-        <!-- <image src='../../../images/1.png' class="ime" mode="aspectFill"></image> -->
-        <!-- 活动负责人 -->
-        <view class="cu-bar bg-white">
-          <view class="action">
-            <text class="cuIcon-title text-purple"></text>
-            <text>活动负责人</text>
-            <text class="post-man">{{actiList.organizer_name}}</text>
-          </view>
-        </view>
-        <!-- 负责人联系方式 -->
-        <view class="cu-bar bg-white">
-          <view class="action">
-            <text class="cuIcon-title text-pink"></text>
-            <text>负责人联系方式</text>
-            <text class="post-phone">{{actiList.organizer_phone_num}}</text>
-          </view>
-        </view>
 
-          <button wx:if="{{actiList.status==1&&(relation==0||relation==2)}}" bindtap='sign' class='button button-margin' hover-class='button-hover'>
-            我要报名
-          </button>
-          <button wx:elif="{{actiList.status==1}}" bindtap='unsign' class='button-yellow button-margin' hover-class='button-hover'>
-            取消报名
-          </button>
-          <!-- <button wx:if="{{(relation==2||relation==3)&&actiList.status==1}}" bindtap='pick' class='button-blue button-margin' hover-class='button-hover'>
+        <!--UI施工现场-->
+        <wux-wing-blank size="default">
+          <wux-card
+            title="{{ actiList.name }}"
+            thumb="https://bkimg.cdn.bcebos.com/pic/aa64034f78f0f736479f78b40455b319ebc41325?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U5Mg==,xp_5,yp_5"
+          >
+            <view slot="body">
+              <view class="cu-bar bg-white">
+                <view class="action">
+                  <text class="cuIcon-title text-red"></text>
+                  <text>活动时间</text>
+                  <text class="post-date">{{ actiList.event_date }}</text>
+                </view>
+              </view>
+              <!-- 报名时间 -->
+              <view class="cu-bar bg-white">
+                <view class="action">
+                  <text class="cuIcon-title text-blue"></text>
+                  <text>报名时间</text>
+                  <text class="post-date"
+                    >{{ actiList.start_date }} 至 {{ actiList.end_date }}</text
+                  >
+                </view>
+              </view>
+              <!-- 活动招募人数 -->
+              <view class="cu-bar bg-white">
+                <view class="action">
+                  <text class="cuIcon-title text-yellow"></text>
+                  <text>活动招募人数</text>
+                  <text class="post-num">{{ actiList.recruit_num }}人</text>
+                </view>
+              </view>
+              <!-- 活动详情 -->
+              <view class="cu-bar bg-white">
+                <view class="action">
+                  <text class="cuIcon-title text-green"></text>
+                  <text>活动详情</text>
+                </view>
+              </view>
+              <text class="post-content">{{ actiList.description }}</text>
+              <!-- <image src='../../../images/1.png' class="ime" mode="aspectFill"></image> -->
+              <!-- 活动负责人 -->
+              <view class="cu-bar bg-white">
+                <view class="action">
+                  <text class="cuIcon-title text-purple"></text>
+                  <text>活动负责人</text>
+                  <text class="post-man">{{ actiList.organizer_name }}</text>
+                </view>
+              </view>
+              <!-- 负责人联系方式 -->
+              <view class="cu-bar bg-white">
+                <view class="action">
+                  <text class="cuIcon-title text-pink"></text>
+                  <text>负责人联系方式</text>
+                  <text class="post-phone">{{
+                    actiList.organizer_phone_num
+                  }}</text>
+                </view>
+              </view></view
+            >
+            <view slot="footer">All Rights Reserved</view>
+          </wux-card>
+        </wux-wing-blank>
+
+        <!--end-->
+        <button
+          wx:if="{{ actiList.status == 1 && (relation == 0 || relation == 2) }}"
+          bindtap="sign"
+          class="button button-margin"
+          hover-class="button-hover"
+        >
+          我要报名
+        </button>
+        <button
+          wx:elif="{{ actiList.status == 1 }}"
+          bindtap="unsign"
+          class="button-yellow button-margin"
+          hover-class="button-hover"
+        >
+          取消报名
+        </button>
+        <!-- <button wx:if="{{(relation==2||relation==3)&&actiList.status==1}}" bindtap='pick' class='button-blue button-margin' hover-class='button-hover'>
             抽取参与人员
           </button>
           <button wx:if="{{(relation==2||relation==3)&&actiList.status==3}}" bindtap='pick' class='button-blue button-margin' hover-class='button-hover'>
             已抽签
           </button> -->
-          <button wx:if="{{relation==2||relation==3}}" bindtap='delete' class='button-red button-margin' hover-class='button-hover'>
-            删除活动
-          </button>
+        <button
+          wx:if="{{ relation == 2 || relation == 3 }}"
+          bindtap="delete"
+          class="button-red button-margin"
+          hover-class="button-hover"
+        >
+          删除活动
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!--报名详情-->
+  <view wx:if="{{ TabCur == 1 }}">
+    <view class="bg-img bg-mask back">
+      <view class="text-white">
+        <view class="padding-s text-xl sign-title">
+          已报名成员
+        </view>
+        <view wx:for="{{ nameList }}" class="name">
+          <view class="bg-green shadow-blur name-card">
+            {{ item.user_name }}
+          </view>
         </view>
       </view>
     </view>
-</view>
-
-
-<!--报名详情-->
-<view wx:if="{{ TabCur == 1 }}">
-  <view class="bg-img bg-mask back">
-    <view class="text-white">
-      <view class="padding-s text-xl sign-title">
-        已报名成员
-      </view>
-      <view wx:for="{{ nameList }}" class="name">
-        <view class="bg-green shadow-blur name-card">
-          {{ item.user_name }}
+    <view class="bg-img bg-mask back2">
+      <view class="text-white">
+        <view class="padding-s text-xl sign-title">
+          已抽中成员
+        </view>
+        <view wx:for="{{ nameList }}" class="name">
+          <view
+            wx:if="{{ item.isPicked == true }}"
+            class="bg-green shadow-blur name-card"
+          >
+            {{ item.user_name }}
+          </view>
         </view>
       </view>
     </view>
-  </view>
-  <view class="bg-img bg-mask back2">
-    <view class="text-white">
-      <view class="padding-s text-xl sign-title">
-        已抽中成员
-      </view>
-      <view wx:for="{{ nameList }}" class="name">
-        <view wx:if="{{ item.isPicked==true }}" class="bg-green shadow-blur name-card"> {{ item.user_name }} </view>
-      </view>
+    <view wx:if="{{ relation == 2 || relation == 3 }}">
+      <form bindsubmit="pick" class="first">
+        <input
+          name="num"
+          class="input1"
+          type="number"
+          placeholder="输入抽取人数"
+        />
+        <button formType="submit" class="btn">
+          <image
+            class="img1"
+            mode="widthFix"
+            src="../../../icon/zhuazi.png"
+          ></image>
+        </button>
+      </form>
     </view>
-  </view>
-  <view wx:if="{{relation==2||relation==3}}" >
-    <form bindsubmit="pick" class="first">
-    <view class="select">抽取</view>
-    <input name="num" class="input1" type="number" placeholder="输入抽取人数" />
-    <button formType="submit" class="btn">
-      <image class="img1" mode="widthFix" src="../../../icon/zhuazi.png"></image>
-    </button>
-  </form>
-  </view>
-  <!-- <form bindsubmit="fxselect" class="first">
+    <!-- <form bindsubmit="fxselect" class="first">
     <view class="select">补录</view>
     <input name="num" class="input1" placeholder="输入补录人数" />
     <button formType="submit" class="btn">
       <image class="img1" mode="widthFix" src="../../../icon/zhuazi.png"></image>
     </button>
   </form> -->
-</view>
+  </view>
 
-<view class="cu-modal {{modalName=='Modal'?'show':''}}">
-  <view class="cu-dialog">
-    <!-- <view class="cu-bar bg-white justify-end">
+  <view class="cu-modal {{ modalName == 'Modal' ? 'show' : '' }}">
+    <view class="cu-dialog">
+      <!-- <view class="cu-bar bg-white justify-end">
       <view class="content">Modal标题</view>
       <view class="action" bindtap="hideModal">
         <text class="cuIcon-close text-red"></text>
       </view>
     </view> -->
-    <view class="padding-xl">
-      {{modalContent}}
-    </view>
-    <view class="cu-bar bg-white">
-      <view class="action margin-0 flex-sub solid-left" bindtap="hideModal">确定</view>
+      <view class="padding-xl">
+        {{ modalContent }}
+      </view>
+      <view class="cu-bar bg-white">
+        <view class="action margin-0 flex-sub solid-left" bindtap="hideModal"
+          >确定</view
+        >
+      </view>
     </view>
   </view>
-</view>
 
-<view class="cu-modal {{modalName=='ModalDelete'?'show':''}}">
-  <view class="cu-dialog">
-    <!-- <view class="cu-bar bg-white justify-end">
+  <view class="cu-modal {{ modalName == 'ModalDelete' ? 'show' : '' }}">
+    <view class="cu-dialog">
+      <!-- <view class="cu-bar bg-white justify-end">
       <view class="content">Modal标题</view>
       <view class="action" bindtap="hideModal">
         <text class="cuIcon-close text-red"></text>
       </view>
     </view> -->
-    <view class="padding-xl">
-      {{modalContent}}
-    </view>
-    <view class="cu-bar bg-white">
-      <view class="action margin-0 flex-sub solid-left" bindtap="hideModalDelete">确定</view>
+      <view class="padding-xl">
+        {{ modalContent }}
+      </view>
+      <view class="cu-bar bg-white">
+        <view
+          class="action margin-0 flex-sub solid-left"
+          bindtap="hideModalDelete"
+          >确定</view
+        >
+      </view>
     </view>
   </view>
 </view>

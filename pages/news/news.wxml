@@ -1,24 +1,11 @@
-<cu-custom bgColor="bg-yellow" isBack="{{ true }}">
+<cu-custom bgColor="bg-top" isBack="{{ true }}">
   <view slot="backText">返回</view>
   <view slot="content">新闻公告</view>
 </cu-custom>
-<view class="post-container">
-  <view class="newstitle bg-white">
-    <view class="action">
-      <!-- <text class="post-title">Title</text> -->
-      <text class="title">{{news.title}}</text>
-    </view>
-  </view>
-  <view class="action">
-    <text class="post-author">author:</text>
-    <text class="post-author-name text-grey">{{news.author}}</text>
-    <text class="post-date">date:</text>
-    <text class='text-grey'>{{news.date}}</text>
-  </view>
-  <view class="action">
-    <text>\n</text>
-    <text class="post-content">{{news.text}}</text>
-  </view>
 
-  <image src='{{news.imgSrc}}' class="ime" mode="aspectFill"></image>
-</view>
+<wux-wing-blank size="default">
+  <wux-card title="{{ news.title }}">
+    <text slot="body"  class="text-content"  decode="true"> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;{{ news.text }}</text>
+    <view slot="footer">时间：{{ news.date }}</view>
+  </wux-card>
+</wux-wing-blank>

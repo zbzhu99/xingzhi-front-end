@@ -4,15 +4,13 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
 		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -21,11 +19,13 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
 		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.2",
+	"libVersion": "2.11.1",
 	"appid": "wxa09da12dbd4e3904",
 	"projectname": "ColorUI-template",
 	"debugOptions": {

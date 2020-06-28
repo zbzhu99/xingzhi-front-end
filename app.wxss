@@ -2,4 +2,11 @@
 @import 'colorui/icon.wxss';
 page {
   overflow-x: hidden;
+  background-color: #a3aece34
+}
+
+.bg-top {
+background-color: #8ca1e7;
+color: var(--white);
+
 }
